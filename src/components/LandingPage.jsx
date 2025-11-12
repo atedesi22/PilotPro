@@ -10,7 +10,7 @@ import { MdOutlineSecurity } from 'react-icons/md'; // Pour l'icône de sécurit
 // Import de votre icône de logo (si vous l'avez en SVG ou un composant React)
 // Pour cet exemple, je vais simuler l'icône et utiliser FaPlay pour le logo textuel "PilotPro"
 // Si vous avez un SVG, vous l'importeriez et l'utiliseriez ici.
-import { ReactComponent as PilotProLogoIcon } from '../assets/pilotpro-icon.svg'; // Exemple si vous avez un SVG
+// import { ReactComponent as PilotProLogoIcon } from '../assets/pilotpro-icon.svg'; // Exemple si vous avez un SVG
 
 const LandingPage = () => {
   return (
@@ -19,7 +19,7 @@ const LandingPage = () => {
       <header className="fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-2xl font-bold">
-            <FaPlay className="mr-2 text-3xl" /> PilotPro
+            <img src="/logopilotpro.png" alt="Logo PilotPro" />
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
@@ -69,7 +69,7 @@ const LandingPage = () => {
           </div>
           <div className="md:w-1/2 flex justify-center">
             {/* Remplacer par votre illustration de la section Héro */}
-            <img src="https://i.imgur.com/kS5x87J.png" alt="PilotPro Illustration" className="max-w-full h-auto" />
+            <img src="/hero.png" alt="PilotPro Illustration" className="max-w-full h-auto" />
           </div>
         </section>
 

@@ -2,25 +2,56 @@ import { React, useState } from 'react'
 import './index.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
-// Importez d'autres composants de page ici (Login, Register, etc.)
-
+// import PricingPage from './components/PricingPage'; 
+import FAQPage from './components/FAQPage';
+import LoginPage from './components/LoginPage';
+// Importez la page Contact lorsque vous la créerez
+// import ContactPage from './components/ContactPage';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        {/* Ajoutez d'autres routes ici */}
-        <Route path="/login" element={<div>Login Page</div>} />
-        <Route path="/register" element={<div>Register Page</div>} />
-        <Route path="/features" element={<div>Features Page</div>} />
-        <Route path="/pricing" element={<div>Pricing Page</div>} />
-        <Route path="/contact" element={<div>Contact Page</div>} />
-        <Route path="/demo" element={<div>Demo Request Page</div>} />
-        {/* Exemple pour les liens du footer */}
-        <Route path="/about" element={<div>About Page</div>} />
-        <Route path="/terms" element={<div>Terms Page</div>} />
-        <Route path="/privacy" element={<div>Privacy Page</div>} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          
+          {/* --- Routes Publiques (Accessibles à tous) --- */}
+          
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/tarifs" element={<PricingPage />} />
+          <Route path="/pricing" element={<PricingPage />} /> {/* Alias pour plus de flexibilité */}
+
+          <Route path="/faq" element={<FAQPage />} />
+          
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/connexion" element={<LoginPage />} /> {/* Alias */}
+          
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/inscription" element={<RegisterPage />} /> {/* Alias */}
+          
+          <Route path="/features" element={<FeaturesPage />} />
+          <Route path="/fonctionnalites" element={<FeaturesPage />} /> {/* Alias */}
+          
+          {/* <Route path="/contact" element={<ContactPage />} /> */}
+          {/* <Route path="/demo" element={<div>Demande de Démo</div>} /> */}
+
+          {/* --- Routes Privées (À Sécuriser) --- */}
+          
+          {/* Le routage ci-dessous nécessitera des Guards (protection d'accès) */}
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/app" element={<UserDashboard />} /> 
+          <Route path="/dashboard" element={<UserDashboard />} />
+
+          
+          {/* --- Route de Secours (Page 404) --- */}
+          <Route path="*" element={
+            <div className="flex flex-col items-center justify-center min-h-screen">
+              <h1 className="text-4xl font-bold text-pilotpro-blue mb-4">404</h1>
+              <p className="text-lg text-text-deep-grey">Oups ! Cette page n'existe pas.</p>
+              <Link to="/" className="mt-6 text-success-green hover:underline">Retour à l'accueil</Link>
+            </div>
+          } />
+          
+        </Routes>
+      </div>
     </Router>
   );
 }
