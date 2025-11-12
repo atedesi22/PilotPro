@@ -18,8 +18,8 @@ const LandingPage = () => {
       {/* Header / Navigation Bar */}
       <header className="fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-2xl font-bold">
-            <img src="/logopilotpro.png" alt="Logo PilotPro" />
+          <Link to="/" className="flex items-center text-pilotpro-blue font-heading w-6 h-6 text-2xl font-bold">
+            <img src="/logopilotpro.png" className='w-6 h-6' alt="Logo PilotPro" />
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
