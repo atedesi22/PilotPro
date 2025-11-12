@@ -10,9 +10,9 @@ import {
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'gray-900': '#34495E',
-    'success-green': '#A2E0D4',
-    'text-deep-grey': '#4A4A4A',
+    'gray-800': '#34495E',
+    'green-300': '#A2E0D4',
+    'gray-900': '#4A4A4A',
     'background-light': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
@@ -26,11 +26,11 @@ const MobileNavbar = () => {
     // Fonction pour déterminer si le lien est actif
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-success-green' : 'text-white'
+            location.pathname === path ? 'text-green-300' : 'text-white'
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-14">
                 <Link to="/" className={getLinkClass('/')}>
                     <FaHome className="text-xl mb-0.5" /> Accueil
@@ -95,19 +95,19 @@ const RegisterEmployeePage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background-alt font-sans text-text-deep-grey">
+        <div className="min-h-screen bg-background-alt font-sans text-gray-900">
             
             {/* 1. Header / Navigation Bar (Desktop) */}
             <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
-                        <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                        <div className="w-6 h-6 mr-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
-                        <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
-                        <Link to="/contact" className="hover:text-gray-900">Contact</Link>
-                        <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
+                        <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
+                        <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
+                        <Link to="/contact" className="hover:text-gray-800">Contact</Link>
+                        <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
                     </div>
                 </nav>
             </header>
@@ -115,10 +115,10 @@ const RegisterEmployeePage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
+                         <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
-                    <div className="flex items-center space-x-3 text-text-deep-grey">
+                    <div className="flex items-center space-x-3 text-gray-900">
                         <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
                         <Link to="/login"><FaUserCircle className="text-xl"/></Link>
                     </div>
@@ -132,20 +132,20 @@ const RegisterEmployeePage = () => {
                     
                     <div className="flex flex-col items-center mb-8">
                         {/* Icône du logo PilotPro au-dessus du titre */}
-                        <div className="w-8 h-8 mb-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
-                        <h2 className="font-heading text-2xl font-bold text-gray-900">PilotPro</h2>
+                        <div className="w-8 h-8 mb-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
+                        <h2 className="font-heading text-2xl font-bold text-gray-800">PilotPro</h2>
                     </div>
 
-                    <h1 className="font-heading text-center text-2xl font-semibold text-text-deep-grey mb-8">
+                    <h1 className="font-heading text-center text-2xl font-semibold text-gray-900 mb-8">
                         Créez votre compte PilotPro
                     </h1>
 
                     {registrationSuccess ? (
-                        <div className="text-center p-6 bg-success-green/20 text-text-deep-grey rounded-md mb-6">
-                            <FaCheckCircle className="text-5xl text-success-green mx-auto mb-4" />
+                        <div className="text-center p-6 bg-green-300/20 text-gray-900 rounded-md mb-6">
+                            <FaCheckCircle className="text-5xl text-green-300 mx-auto mb-4" />
                             <p className="font-semibold text-lg mb-2">Inscription réussie !</p>
                             <p>Veuillez vérifier votre email pour le lien d'activation.</p>
-                            <Link to="/login" className="text-gray-900 hover:underline mt-4 block">Connectez-vous</Link>
+                            <Link to="/login" className="text-gray-800 hover:underline mt-4 block">Connectez-vous</Link>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit}>
@@ -156,7 +156,7 @@ const RegisterEmployeePage = () => {
                                     placeholder="Nom de l'employé"
                                     value={formData.employeeName}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.employeeName ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
+                                    className={`w-full p-3 border ${errors.employeeName ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-800 focus:border-gray-800 transition-all`}
                                 />
                                 {errors.employeeName && <p className="text-red-500 text-sm mt-1">{errors.employeeName}</p>}
                             </div>
@@ -167,7 +167,7 @@ const RegisterEmployeePage = () => {
                                     placeholder="Email professionnel"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.email ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
+                                    className={`w-full p-3 border ${errors.email ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-800 focus:border-gray-800 transition-all`}
                                 />
                                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                             </div>
@@ -178,7 +178,7 @@ const RegisterEmployeePage = () => {
                                     placeholder="Mot de passe"
                                     value={formData.password}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.password ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
+                                    className={`w-full p-3 border ${errors.password ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-800 focus:border-gray-800 transition-all`}
                                 />
                                 {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                             </div>
@@ -189,7 +189,7 @@ const RegisterEmployeePage = () => {
                                     placeholder="Confirmer le mot de passe"
                                     value={formData.confirmPassword}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.confirmPassword ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
+                                    className={`w-full p-3 border ${errors.confirmPassword ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-800 focus:border-gray-800 transition-all`}
                                 />
                                 {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>}
                             </div>
@@ -201,17 +201,17 @@ const RegisterEmployeePage = () => {
                                     id="acceptTerms"
                                     checked={formData.acceptTerms}
                                     onChange={handleChange}
-                                    className={`mr-2 h-4 w-4 rounded ${errors.acceptTerms ? 'border-red-500' : 'border-border-grey'} text-gray-900 focus:ring-gray-900`}
+                                    className={`mr-2 h-4 w-4 rounded ${errors.acceptTerms ? 'border-red-500' : 'border-border-grey'} text-gray-800 focus:ring-gray-800`}
                                 />
-                                <label htmlFor="acceptTerms" className="text-sm text-text-deep-grey">
-                                    J'accepte les <Link to="/terms" className="text-gray-900 hover:underline">Conditions Générales d'Utilisation</Link> et la <Link to="/privacy" className="text-gray-900 hover:underline">Politique Confidentialité</Link>
+                                <label htmlFor="acceptTerms" className="text-sm text-gray-900">
+                                    J'accepte les <Link to="/terms" className="text-gray-800 hover:underline">Conditions Générales d'Utilisation</Link> et la <Link to="/privacy" className="text-gray-800 hover:underline">Politique Confidentialité</Link>
                                 </label>
                             </div>
                             {errors.acceptTerms && <p className="text-red-500 text-sm mb-4">{errors.acceptTerms}</p>}
 
                             <button
                                 type="submit"
-                                className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-gray-900/90 transition-colors mb-4"
+                                className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-gray-800/90 transition-colors mb-4"
                             >
                                 S'inscrire
                             </button>
@@ -219,9 +219,9 @@ const RegisterEmployeePage = () => {
                     )}
 
                     {!registrationSuccess && (
-                        <p className="text-center text-sm text-text-deep-grey">
+                        <p className="text-center text-sm text-gray-900">
                             Déjà un compte ?{' '}
-                            <Link to="/login" className="text-gray-900 hover:underline font-semibold">
+                            <Link to="/login" className="text-gray-800 hover:underline font-semibold">
                                 Connectez-vous
                             </Link>
                         </p>

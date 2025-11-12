@@ -10,9 +10,9 @@ import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'; // Pour l'accord�
 
 // --- Charte Graphique et Données ---
 const colors = {
-    'gray-900': '#34495E',
-    'success-green': '#A2E0D4',
-    'text-deep-grey': '#4A4A4A',
+    'gray-800': '#34495E',
+    'green-300': '#A2E0D4',
+    'gray-900': '#4A4A4A',
     'background-light': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
@@ -51,11 +51,11 @@ const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => (
       onClick={toggleAccordion}
     >
       {question}
-      {isOpen ? <FaMinus className="text-gray-900 text-sm" /> : <FaPlus className="text-gray-900 text-sm" />}
+      {isOpen ? <FaMinus className="text-gray-800 text-sm" /> : <FaPlus className="text-gray-800 text-sm" />}
     </button>
     {isOpen && (
       <div className="p-4 border-t border-border-grey bg-background-light">
-        <p className="text-text-deep-grey leading-relaxed">{answer}</p>
+        <p className="text-gray-900 leading-relaxed">{answer}</p>
       </div>
     )}
   </div>
@@ -71,18 +71,18 @@ const FAQPage = () => {
   };
 
   const MobileNavbar = () => (
-    <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
+    <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
       <nav className="flex justify-around items-center h-14">
-        <Link to="/" className={`flex flex-col items-center text-xs ${location.pathname === '/' ? 'text-success-green' : 'text-white'}`}>
+        <Link to="/" className={`flex flex-col items-center text-xs ${location.pathname === '/' ? 'text-green-300' : 'text-white'}`}>
           <FaHome className="text-xl mb-0.5" /> Accueil
         </Link>
-        <Link to="/features" className={`flex flex-col items-center text-xs ${location.pathname === '/features' ? 'text-success-green' : 'text-white'}`}>
+        <Link to="/features" className={`flex flex-col items-center text-xs ${location.pathname === '/features' ? 'text-green-300' : 'text-white'}`}>
           <FaClipboardCheck className="text-xl mb-0.5" /> Fonctionnalités
         </Link>
-        <Link to="/pricing" className={`flex flex-col items-center text-xs ${location.pathname === '/pricing' ? 'text-success-green' : 'text-white'}`}>
+        <Link to="/pricing" className={`flex flex-col items-center text-xs ${location.pathname === '/pricing' ? 'text-green-300' : 'text-white'}`}>
           <FaMoneyBillWave className="text-xl mb-0.5" /> Tarifs
         </Link>
-        <Link to="/contact" className={`flex flex-col items-center text-xs ${location.pathname === '/contact' ? 'text-success-green' : 'text-white'}`}>
+        <Link to="/contact" className={`flex flex-col items-center text-xs ${location.pathname === '/contact' ? 'text-green-300' : 'text-white'}`}>
           <FaLifeRing className="text-xl mb-0.5" /> Contact
         </Link>
       </nav>
@@ -91,19 +91,19 @@ const FAQPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-background-alt font-sans text-text-deep-grey">
+    <div className="min-h-screen bg-background-alt font-sans text-gray-900">
       {/* Header (Desktop - visible sur grand écran) */}
       <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
-             <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+          <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+             <div className="w-6 h-6 mr-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
           </Link>
           <div className="flex items-center space-x-6">
-            <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
-            <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
-            <Link to="/contact" className="hover:text-gray-900">Contact</Link>
-            <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
-            <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+            <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
+            <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
+            <Link to="/contact" className="hover:text-gray-800">Contact</Link>
+            <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
+            <Link to="/register" className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
           </div>
         </nav>
       </header>
@@ -111,10 +111,10 @@ const FAQPage = () => {
       {/* Header (Mobile - Barre de navigation simplifiée pour petit écran) */}
       <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
         <nav className="px-4 py-3 flex items-center justify-between">
-            <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
-                 <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+            <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
+                 <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
             </Link>
-            <div className="flex items-center space-x-3 text-text-deep-grey">
+            <div className="flex items-center space-x-3 text-gray-900">
                 {/* Icônes de connexion/utilisateur */}
                 <FaRegBuilding className="text-xl"/>
                 <FaUserFriends className="text-xl"/>
@@ -124,10 +124,10 @@ const FAQPage = () => {
 
 
       <main className="container mx-auto px-6 py-8 md:py-16 pt-20 md:pt-20 pb-20 md:pb-8"> {/* Augmente le padding-bottom pour le mobile */}
-        <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+        <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-800 mb-2">
           Questions Fréquentes
         </h1>
-        <p className="text-lg text-text-deep-grey mb-8">
+        <p className="text-lg text-gray-900 mb-8">
           Trouvez rapidement les réponses à vos interrogations.
         </p>
 
@@ -136,7 +136,7 @@ const FAQPage = () => {
           <input
             type="text"
             placeholder="Rechercher une question..."
-            className="w-full p-3 pl-10 border border-border-grey rounded-lg focus:ring-gray-900 focus:border-gray-900 transition-all"
+            className="w-full p-3 pl-10 border border-border-grey rounded-lg focus:ring-gray-800 focus:border-gray-800 transition-all"
           />
           <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-border-grey" />
         </div>
@@ -148,11 +148,11 @@ const FAQPage = () => {
           <div className="hidden lg:block space-y-2">
             <h3 className="font-heading text-xl font-semibold mb-3">Général</h3>
             {faqData.map((data, index) => (
-              <a key={index} href={`#${data.category.replace(/\s/g, '-')}`} className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-900 transition-colors">
+              <a key={index} href={`#${data.category.replace(/\s/g, '-')}`} className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-800 transition-colors">
                 {data.category}
               </a>
             ))}
-            <a href="#contact-us" className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-900 transition-colors">
+            <a href="#contact-us" className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-800 transition-colors">
                 Support
             </a>
           </div>
@@ -161,7 +161,7 @@ const FAQPage = () => {
           <div className="lg:col-span-2">
             {faqData.map((data, categoryIndex) => (
               <div key={categoryIndex} id={data.category.replace(/\s/g, '-')} className="mb-10">
-                <h3 className="font-heading text-2xl font-bold text-text-deep-grey mb-4">
+                <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4">
                     {data.category}
                 </h3>
                 {data.questions.map((qA, questionIndex) => {
@@ -184,10 +184,10 @@ const FAQPage = () => {
 
         {/* Section Contact - Si la question n'est pas trouvée */}
         <section id="contact-us" className="flex flex-col md:flex-row items-center justify-between p-6 bg-background-light rounded-lg shadow-md mt-16 border border-border-grey">
-            <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-4 md:mb-0">
+            <h3 className="font-heading text-xl font-semibold text-gray-900 mb-4 md:mb-0">
                 Votre question n'est pas ici ?
             </h3>
-            <Link to="/contact" className="flex items-center px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">
+            <Link to="/contact" className="flex items-center px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">
                 <FaLifeRing className="mr-2" /> Contacter le Support
             </Link>
         </section>
@@ -195,14 +195,14 @@ const FAQPage = () => {
       </main>
 
       {/* Footer (Desktop - simple footer) */}
-      <footer className="hidden md:block bg-gray-900 py-6 px-6 text-white mt-12">
+      <footer className="hidden md:block bg-gray-800 py-6 px-6 text-white mt-12">
         <div className="container mx-auto flex justify-between items-center text-sm">
           <p>&copy; {new Date().getFullYear()} PilotPro.</p>
           <div className="flex space-x-4">
             {/* Liens du footer */}
-            <Link to="/about" className="hover:text-success-green">À Propos</Link>
-            <Link to="/terms" className="hover:text-success-green">Conditions</Link>
-            <Link to="/privacy" className="hover:text-success-green">Confidentialité</Link>
+            <Link to="/about" className="hover:text-green-300">À Propos</Link>
+            <Link to="/terms" className="hover:text-green-300">Conditions</Link>
+            <Link to="/privacy" className="hover:text-green-300">Confidentialité</Link>
           </div>
           <div className="flex space-x-4">
               {/* Icônes des réseaux sociaux */}

@@ -11,9 +11,9 @@ import {
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'gray-900': '#34495E',
-    'success-green': '#A2E0D4',
-    'text-deep-grey': '#4A4A4A',
+    'gray-800': '#34495E',
+    'green-300': '#A2E0D4',
+    'gray-900': '#4A4A4A',
     'background-light': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
@@ -26,11 +26,11 @@ const MobileNavbar = () => {
     
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors p-2 ${
-            location.pathname.includes(path) ? 'text-success-green' : 'text-white'
+            location.pathname.includes(path) ? 'text-green-300' : 'text-white'
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-16">
                 <Link to="/" className={getLinkClass('/')}>
                     <FaHome className="text-xl mb-0.5" /> Accueil
@@ -110,12 +110,12 @@ const ContactForm = () => {
 
     return (
         <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-border-grey h-full">
-            <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-6">
+            <h3 className="font-heading text-xl font-semibold text-gray-900 mb-6">
                 Envoyez-nous un message
             </h3>
             
             {status === 'success' && (
-                <div className="p-3 mb-4 text-sm text-success-green bg-success-green/20 rounded-lg font-medium">
+                <div className="p-3 mb-4 text-sm text-green-300 bg-green-300/20 rounded-lg font-medium">
                     Message envoyé ! Notre équipe vous répondra sous 24h. (Stocké localement pour l'Admin)
                 </div>
             )}
@@ -130,35 +130,35 @@ const ContactForm = () => {
 // --- Composant Informations de Contact ---
 const ContactInfo = () => (
     <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-border-grey h-full">
-        <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-6">
+        <h3 className="font-heading text-xl font-semibold text-gray-900 mb-6">
             Autres moyens de nous joindre
         </h3>
         <div className="space-y-6">
             
             <div className="flex items-center">
-                <FaEnvelope className="text-2xl text-success-green mr-4 flex-shrink-0" />
+                <FaEnvelope className="text-2xl text-green-300 mr-4 flex-shrink-0" />
                 <div>
-                    <p className="font-medium text-text-deep-grey">Email Professionnel</p>
-                    <a href="mailto:contact@pilotpro.com" className="text-gray-900 hover:underline text-sm">
+                    <p className="font-medium text-gray-900">Email Professionnel</p>
+                    <a href="mailto:contact@pilotpro.com" className="text-gray-800 hover:underline text-sm">
                         contact@pilotpro.com
                     </a>
                 </div>
             </div>
 
             <div className="flex items-center">
-                <FaPhone className="text-2xl text-success-green mr-4 flex-shrink-0" />
+                <FaPhone className="text-2xl text-green-300 mr-4 flex-shrink-0" />
                 <div>
-                    <p className="font-medium text-text-deep-grey">Question Commerciale</p>
-                    <a href="tel:+0403346595" className="text-gray-900 hover:underline text-sm">
+                    <p className="font-medium text-gray-900">Question Commerciale</p>
+                    <a href="tel:+0403346595" className="text-gray-800 hover:underline text-sm">
                         +0403346595
                     </a>
                 </div>
             </div>
 
             <div className="flex items-center">
-                <FaBuilding className="text-2xl text-success-green mr-4 flex-shrink-0" />
+                <FaBuilding className="text-2xl text-green-300 mr-4 flex-shrink-0" />
                 <div>
-                    <p className="font-medium text-text-deep-grey">Adresse du Bureau</p>
+                    <p className="font-medium text-gray-900">Adresse du Bureau</p>
                     <p className="text-sm">Adresse Local</p>
                 </div>
             </div>
@@ -167,9 +167,9 @@ const ContactInfo = () => (
         
         {/* Liens Sociaux */}
         <div className="mt-8 pt-4 border-t border-border-grey/50 flex space-x-4 text-2xl justify-center md:justify-start">
-            <a href="#" className="text-gray-900 hover:text-gray-900/80 transition-colors"><FaTwitter /></a>
-            <a href="#" className="text-gray-900 hover:text-gray-900/80 transition-colors"><FaFacebook /></a>
-            <a href="#" className="text-gray-900 hover:text-gray-900/80 transition-colors"><FaLinkedin /></a>
+            <a href="#" className="text-gray-800 hover:text-gray-800/80 transition-colors"><FaTwitter /></a>
+            <a href="#" className="text-gray-800 hover:text-gray-800/80 transition-colors"><FaFacebook /></a>
+            <a href="#" className="text-gray-800 hover:text-gray-800/80 transition-colors"><FaLinkedin /></a>
         </div>
     </div>
 );
@@ -177,20 +177,20 @@ const ContactInfo = () => (
 
 const ContactPage = () => {
     return (
-        <div className="min-h-screen bg-background-light font-sans text-text-deep-grey">
+        <div className="min-h-screen bg-background-light font-sans text-gray-900">
             
             {/* 1. Header / Navigation Bar (Desktop) */}
             <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
-                        <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                        <div className="w-6 h-6 mr-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
-                        <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
-                        <Link to="/contact" className="hover:text-gray-900">Contact</Link>
-                        <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
-                        <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+                        <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
+                        <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
+                        <Link to="/contact" className="hover:text-gray-800">Contact</Link>
+                        <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
+                        <Link to="/register" className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
                     </div>
                 </nav>
             </header>
@@ -198,10 +198,10 @@ const ContactPage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
+                         <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
-                    <div className="flex items-center space-x-3 text-text-deep-grey">
+                    <div className="flex items-center space-x-3 text-gray-900">
                         <FaQuestionCircle className="text-xl"/>
                         <FaUserCircle className="text-xl"/>
                         <FaBars className="text-xl"/> 
@@ -210,10 +210,10 @@ const ContactPage = () => {
             </header>
 
             <main className="container mx-auto px-6 py-8 md:py-16 pt-20 md:pt-20 pb-20 md:pb-8">
-                <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center md:text-left">
+                <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-center md:text-left">
                     Contactez-nous
                 </h1>
-                <p className="text-lg text-text-deep-grey mb-10 text-center md:text-left">
+                <p className="text-lg text-gray-900 mb-10 text-center md:text-left">
                     Notre équipe est là pour vous aider à réussir.
                 </p>
 
@@ -227,10 +227,10 @@ const ContactPage = () => {
                 
                 {/* Section Retour à l'Accueil */}
                 <section className="text-center py-16">
-                    <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-4">
+                    <h3 className="font-heading text-xl font-semibold text-gray-900 mb-4">
                         Nous sommes impatients de vous aider à réussir
                     </h3>
-                    <Link to="/" className="inline-flex items-center px-6 py-3 bg-background-alt text-gray-900 border border-gray-900 rounded-md font-semibold hover:bg-gray-900/10 transition-colors">
+                    <Link to="/" className="inline-flex items-center px-6 py-3 bg-background-alt text-gray-800 border border-gray-800 rounded-md font-semibold hover:bg-gray-800/10 transition-colors">
                         Retour à l'Accueil
                     </Link>
                 </section>
@@ -238,17 +238,17 @@ const ContactPage = () => {
 
             {/* Footer (Desktop - simple footer basé sur le design) */}
             <footer className="hidden md:block bg-background-alt py-8 px-6 border-t border-border-grey">
-                <div className="container mx-auto flex justify-between items-center text-sm text-text-deep-grey">
+                <div className="container mx-auto flex justify-between items-center text-sm text-gray-900">
                     <div className="flex space-x-6">
-                        <Link to="/about" className="hover:text-gray-900">À Propos</Link>
-                        <Link to="/terms" className="hover:text-gray-900">Conditions</Link>
-                        <Link to="/privacy" className="hover:text-gray-900">Confidentialité</Link>
+                        <Link to="/about" className="hover:text-gray-800">À Propos</Link>
+                        <Link to="/terms" className="hover:text-gray-800">Conditions</Link>
+                        <Link to="/privacy" className="hover:text-gray-800">Confidentialité</Link>
                     </div>
                     <p className="text-xs">&copy; {new Date().getFullYear()} PilotPro. Tous droits réservés.</p>
                     <div className="flex space-x-4 text-xl">
                         {/* Icônes de réseaux sociaux - Placeholders */}
-                        <FaPlay className="hover:text-gray-900" />
-                        <FaPlay className="hover:text-gray-900" />
+                        <FaPlay className="hover:text-gray-800" />
+                        <FaPlay className="hover:text-gray-800" />
                     </div>
                 </div>
             </footer>

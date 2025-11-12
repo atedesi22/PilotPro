@@ -5,10 +5,10 @@ import { FaEye, FaEyeSlash, FaTrash, FaArrowLeft, FaEnvelope } from 'react-icons
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'gray-900': '#34495E',
-    'success-green': '#A2E0D4',
-    'alert-orange': '#F7A384',
-    'text-deep-grey': '#4A4A4A',
+    'gray-800': '#34495E',
+    'green-300': '#A2E0D4',
+    'orange-300': '#F7A384',
+    'gray-900': '#4A4A4A',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
 };
@@ -89,7 +89,7 @@ const SuperAdminMessages = () => {
             <div className="min-h-screen bg-background-alt p-8 font-sans">
                 <button 
                     onClick={() => setSelectedMessage(null)} 
-                    className="flex items-center text-gray-900 hover:text-gray-900/80 mb-6 font-semibold"
+                    className="flex items-center text-gray-800 hover:text-gray-800/80 mb-6 font-semibold"
                 >
                     <FaArrowLeft className="mr-2" /> Retour à la liste
                 </button>
@@ -97,26 +97,26 @@ const SuperAdminMessages = () => {
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-border-grey">
                     <div className="flex justify-between items-start border-b pb-4 mb-4">
                         <div>
-                            <h1 className="text-2xl font-bold text-text-deep-grey">{selectedMessage.subject}</h1>
-                            <p className="text-sm text-text-deep-grey/70">De: <span className="font-medium text-gray-900">{selectedMessage.name}</span> ({selectedMessage.email})</p>
+                            <h1 className="text-2xl font-bold text-gray-900">{selectedMessage.subject}</h1>
+                            <p className="text-sm text-gray-900/70">De: <span className="font-medium text-gray-800">{selectedMessage.name}</span> ({selectedMessage.email})</p>
                         </div>
                         <div className="text-right">
-                             <p className="text-xs text-text-deep-grey/60 mb-2">{selectedMessage.date}</p>
+                             <p className="text-xs text-gray-900/60 mb-2">{selectedMessage.date}</p>
                              <button 
                                 onClick={() => deleteMessage(selectedMessage.id)} 
-                                className="text-alert-orange hover:text-alert-orange/80 p-2 text-xl"
+                                className="text-orange-300 hover:text-orange-300/80 p-2 text-xl"
                                 title="Supprimer"
                             >
                                 <FaTrash />
                             </button>
                         </div>
                     </div>
-                    <p className="whitespace-pre-wrap text-text-deep-grey leading-relaxed">
+                    <p className="whitespace-pre-wrap text-gray-900 leading-relaxed">
                         {selectedMessage.message}
                     </p>
                     <div className="mt-6 pt-4 border-t flex justify-end">
                          <a href={`mailto:${selectedMessage.email}?subject=Re:${selectedMessage.subject}`} 
-                           className="flex items-center px-4 py-2 bg-success-green text-gray-900 rounded-md font-semibold hover:opacity-80 transition-opacity"
+                           className="flex items-center px-4 py-2 bg-green-300 text-gray-800 rounded-md font-semibold hover:opacity-80 transition-opacity"
                         >
                             <FaEnvelope className="mr-2" /> Répondre
                         </a>
@@ -130,16 +130,16 @@ const SuperAdminMessages = () => {
     return (
         <div className="min-h-screen bg-background-alt p-4 md:p-8 font-sans">
             <header className="flex justify-between items-center mb-6 border-b border-border-grey pb-4">
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl font-bold text-gray-800">
                     Super Admin - Messages de Contact
                 </h1>
                 <div className="flex items-center space-x-4">
-                    <span className="text-sm font-semibold text-text-deep-grey">
+                    <span className="text-sm font-semibold text-gray-900">
                         {unreadCount} Nouveaux messages
                     </span>
                     <button 
                         onClick={loadMessages}
-                        className="p-2 bg-gray-900 text-white rounded-full text-xs"
+                        className="p-2 bg-gray-800 text-white rounded-full text-xs"
                     >
                         Actualiser
                     </button>
@@ -148,13 +148,13 @@ const SuperAdminMessages = () => {
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 {messages.length === 0 ? (
-                    <p className="p-8 text-center text-text-deep-grey/70">
+                    <p className="p-8 text-center text-gray-900/70">
                         Aucun message de contact n'a été enregistré dans ce navigateur.
                     </p>
                 ) : (
                     <table className="min-w-full divide-y divide-border-grey">
                         <thead>
-                            <tr className="bg-background-alt text-xs font-medium text-text-deep-grey uppercase tracking-wider text-left">
+                            <tr className="bg-background-alt text-xs font-medium text-gray-900 uppercase tracking-wider text-left">
                                 <th className="py-3 px-4">Statut</th>
                                 <th className="py-3 px-4">Sujet</th>
                                 <th className="py-3 px-4">De</th>
@@ -164,9 +164,9 @@ const SuperAdminMessages = () => {
                         </thead>
                         <tbody className="divide-y divide-border-grey">
                             {messages.map((msg) => (
-                                <tr key={msg.id} className={`hover:bg-background-alt/50 transition-colors cursor-pointer ${!msg.read ? 'bg-success-green/10 font-semibold' : ''}`}>
+                                <tr key={msg.id} className={`hover:bg-background-alt/50 transition-colors cursor-pointer ${!msg.read ? 'bg-green-300/10 font-semibold' : ''}`}>
                                     <td className="py-3 px-4">
-                                        <span className={`px-2 py-1 text-xs font-bold rounded-full ${msg.read ? 'bg-border-grey text-text-deep-grey' : 'bg-success-green text-gray-900'}`}>
+                                        <span className={`px-2 py-1 text-xs font-bold rounded-full ${msg.read ? 'bg-border-grey text-gray-900' : 'bg-green-300 text-gray-800'}`}>
                                             {msg.read ? 'Lu' : 'Nouveau'}
                                         </span>
                                     </td>
@@ -176,20 +176,20 @@ const SuperAdminMessages = () => {
                                     <td className="py-3 px-4" onClick={() => viewMessageDetails(msg)}>
                                         {msg.name}
                                     </td>
-                                    <td className="py-3 px-4 text-sm text-text-deep-grey/70" onClick={() => viewMessageDetails(msg)}>
+                                    <td className="py-3 px-4 text-sm text-gray-900/70" onClick={() => viewMessageDetails(msg)}>
                                         {msg.date}
                                     </td>
                                     <td className="py-3 px-4 flex justify-center space-x-2">
                                         <button 
                                             onClick={() => toggleReadStatus(msg.id)}
-                                            className="text-gray-900 hover:text-gray-900/80 p-1 text-lg"
+                                            className="text-gray-800 hover:text-gray-800/80 p-1 text-lg"
                                             title={msg.read ? "Marquer comme non-lu" : "Marquer comme lu"}
                                         >
                                             {msg.read ? <FaEyeSlash /> : <FaEye />}
                                         </button>
                                         <button 
                                             onClick={() => deleteMessage(msg.id)} 
-                                            className="text-alert-orange hover:text-alert-orange/80 p-1 text-lg"
+                                            className="text-orange-300 hover:text-orange-300/80 p-1 text-lg"
                                             title="Supprimer"
                                         >
                                             <FaTrash />
@@ -202,7 +202,7 @@ const SuperAdminMessages = () => {
                 )}
             </div>
             
-            <p className="text-center text-xs text-alert-orange mt-8">
+            <p className="text-center text-xs text-orange-300 mt-8">
                 ⚠️ **Avertissement :** Cette interface est basée sur le **stockage local (localStorage)** de votre navigateur. Les données seront perdues si vous videz le cache ou si vous changez de navigateur/appareil. Ce n'est pas une base de données réelle.
             </p>
         </div>

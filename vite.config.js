@@ -10,12 +10,12 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
-        'gray-900': '#34495E',
-        'success-green': '#A2E0D4',
-        'alert-orange': '#F7A384',
+        'gray-800': '#34495E',
+        'green-300': '#A2E0D4',
+        'orange-300': '#F7A384',
         'background-light': '#FDFDFD',
         'background-alt': '#F5F7F9',
-        'text-deep-grey': '#4A4A4A',
+        'gray-900': '#4A4A4A',
         'border-grey': '#DDE6ED',
       },
       fontFamily: {

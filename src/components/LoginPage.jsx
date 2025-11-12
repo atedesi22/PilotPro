@@ -7,9 +7,9 @@ import { FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, FaRegBui
 
 // --- Configuration Couleurs & Styles (reprise de la charte) ---
 const colors = {
-    'gray-900': '#34495E',
-    'success-green': '#A2E0D4',
-    'text-deep-grey': '#4A4A4A',
+    'gray-800': '#34495E',
+    'green-300': '#A2E0D4',
+    'gray-900': '#4A4A4A',
     'background-light': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
@@ -23,11 +23,11 @@ const MobileNavbar = () => {
     // Fonction pour déterminer si le lien est actif
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-success-green' : 'text-white'
+            location.pathname === path ? 'text-green-300' : 'text-white'
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-14">
                 <Link to="/" className={getLinkClass('/')}>
                     <FaHome className="text-xl mb-0.5" /> Accueil
@@ -57,21 +57,21 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background-alt font-sans text-text-deep-grey">
+        <div className="min-h-screen bg-background-alt font-sans text-gray-900">
             
             {/* 1. Header / Navigation Bar (Desktop) */}
             <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
                         {/* Utilisation d'un div pour simuler le logo icône */}
-                        <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                        <div className="w-6 h-6 mr-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
-                        <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
-                        <Link to="/contact" className="hover:text-gray-900">Contact</Link>
+                        <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
+                        <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
+                        <Link to="/contact" className="hover:text-gray-800">Contact</Link>
                         {/* Le bouton S'inscrire reste actif, Se connecter disparaît */}
-                        <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+                        <Link to="/register" className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
                     </div>
                 </nav>
             </header>
@@ -79,10 +79,10 @@ const LoginPage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
+                         <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
-                    <div className="flex items-center space-x-3 text-text-deep-grey">
+                    <div className="flex items-center space-x-3 text-gray-900">
                         <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
                         <Link to="/register"><FaUserCircle className="text-xl"/></Link>
                     </div>
@@ -96,11 +96,11 @@ const LoginPage = () => {
                     
                     <div className="flex flex-col items-center mb-8">
                         {/* Icône du logo PilotPro au-dessus du titre */}
-                        <div className="w-8 h-8 mb-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
-                        <h2 className="font-heading text-2xl font-bold text-gray-900">PilotPro</h2>
+                        <div className="w-8 h-8 mb-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
+                        <h2 className="font-heading text-2xl font-bold text-gray-800">PilotPro</h2>
                     </div>
 
-                    <h1 className="font-heading text-center text-2xl font-semibold text-text-deep-grey mb-8">
+                    <h1 className="font-heading text-center text-2xl font-semibold text-gray-900 mb-8">
                         Accédez à votre espace
                     </h1>
 
@@ -110,7 +110,7 @@ const LoginPage = () => {
                                 type="email"
                                 placeholder="Email"
                                 required
-                                className="w-full p-3 border border-border-grey rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all"
+                                className="w-full p-3 border border-border-grey rounded-md focus:ring-gray-800 focus:border-gray-800 transition-all"
                             />
                         </div>
                         <div className="mb-6">
@@ -118,25 +118,25 @@ const LoginPage = () => {
                                 type="password"
                                 placeholder="Mot de passe"
                                 required
-                                className="w-full p-3 border border-border-grey rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all"
+                                className="w-full p-3 border border-border-grey rounded-md focus:ring-gray-800 focus:border-gray-800 transition-all"
                             />
                         </div>
                         
                         <button
                             type="submit"
-                            className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-gray-900/90 transition-colors mb-4"
+                            className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-gray-800/90 transition-colors mb-4"
                         >
                             Se connecter
                         </button>
                     </form>
 
                     <div className="flex flex-col sm:flex-row justify-between items-center text-sm mt-4 space-y-2 sm:space-y-0">
-                        <Link to="/forgot-password" className="text-gray-900 hover:underline">
+                        <Link to="/forgot-password" className="text-gray-800 hover:underline">
                             Mot de passe oublié ?
                         </Link>
-                        <p className="text-text-deep-grey">
+                        <p className="text-gray-900">
                             Pas encore de compte ?{' '}
-                            <Link to="/register" className="text-gray-900 hover:underline font-semibold">
+                            <Link to="/register" className="text-gray-800 hover:underline font-semibold">
                                 S'inscrire
                             </Link>
                         </p>

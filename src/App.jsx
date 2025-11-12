@@ -51,9 +51,9 @@ function App() {
           {/* --- Route de Secours (Page 404) --- */}
           <Route path="*" element={
             <div className="flex flex-col items-center justify-center min-h-screen">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">404</h1>
-              <p className="text-lg text-text-deep-grey">Oups ! Cette page n'existe pas.</p>
-              <Link to="/" className="mt-6 text-success-green hover:underline">Retour à l'accueil</Link>
+              <h1 className="text-4xl font-bold text-gray-800 mb-4">404</h1>
+              <p className="text-lg text-gray-900">Oups ! Cette page n'existe pas.</p>
+              <Link to="/" className="mt-6 text-green-300 hover:underline">Retour à l'accueil</Link>
             </div>
           } />
           

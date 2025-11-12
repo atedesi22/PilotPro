@@ -12,10 +12,10 @@ import { IoIosStats } from 'react-icons/io'; // Pour l'icône Dashboard
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'gray-900': '#34495E',
-    'success-green': '#A2E0D4',
-    'alert-orange': '#F7A384',
-    'text-deep-grey': '#4A4A4A',
+    'gray-800': '#34495E',
+    'green-300': '#A2E0D4',
+    'orange-300': '#F7A384',
+    'gray-900': '#4A4A4A',
     'background-light': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
@@ -31,9 +31,9 @@ const financeData = [
 ];
 
 const stockData = [
-    { name: 'Stock Disponible', value: 70, color: colors['gray-900'] },
-    { name: 'En Commande', value: 20, color: colors['success-green'] },
-    { name: 'Stock Bas', value: 10, color: colors['alert-orange'] },
+    { name: 'Stock Disponible', value: 70, color: colors['gray-800'] },
+    { name: 'En Commande', value: 20, color: colors['green-300'] },
+    { name: 'Stock Bas', value: 10, color: colors['orange-300'] },
 ];
 const stockColors = stockData.map(item => item.color);
 
@@ -51,11 +51,11 @@ const MobileNavbar = () => {
     // Pour les dashboards, nous mettons en surbrillance la route /dashboard
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-success-green' : 'text-white'
+            location.pathname === path ? 'text-green-300' : 'text-white'
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-14">
                 <Link to="/dashboard" className={getLinkClass('/dashboard')}>
                     <FaTachometerAlt className="text-xl mb-0.5" /> Accueil
@@ -103,10 +103,10 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             >
                 {/* Logo et fermeture pour mobile */}
                 <div className="md:hidden flex justify-between items-center p-4 shadow-sm bg-white">
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
-                        <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
+                        <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
-                    <button onClick={toggleSidebar} className="text-text-deep-grey">
+                    <button onClick={toggleSidebar} className="text-gray-900">
                         <FaTimes className="text-2xl" />
                     </button>
                 </div>
@@ -122,11 +122,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                                 to={item.path}
                                 className={`flex items-center p-3 rounded-lg font-semibold transition-colors 
                                     ${isActive 
-                                        ? 'bg-gray-900 text-white' 
-                                        : 'text-text-deep-grey hover:bg-background-alt'
+                                        ? 'bg-gray-800 text-white' 
+                                        : 'text-gray-900 hover:bg-background-alt'
                                     }`}
                             >
-                                <IconComponent className={`mr-3 text-xl ${isActive ? 'text-success-green' : 'text-gray-900'}`} />
+                                <IconComponent className={`mr-3 text-xl ${isActive ? 'text-green-300' : 'text-gray-800'}`} />
                                 {item.name}
                             </Link>
                         );
@@ -139,21 +139,21 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
 
 const FinanceCard = () => (
     <div className="bg-white p-4 rounded-xl shadow-lg border border-border-grey h-full">
-        <h3 className="font-semibold text-text-deep-grey mb-2">Performance Financière</h3>
-        <p className="text-sm text-text-deep-grey mb-4">KPI</p>
-        <p className="font-bold text-3xl text-gray-900 mb-4">125 000 €</p>
+        <h3 className="font-semibold text-gray-900 mb-2">Performance Financière</h3>
+        <p className="text-sm text-gray-900 mb-4">KPI</p>
+        <p className="font-bold text-3xl text-gray-800 mb-4">125 000 €</p>
         <ResponsiveContainer width="100%" height={100}>
             <LineChart data={financeData}>
                 <Line 
                     type="monotone" 
                     dataKey="value" 
-                    stroke={colors['success-green']} 
+                    stroke={colors['green-300']} 
                     strokeWidth={2} 
                     dot={false}
                 />
             </LineChart>
         </ResponsiveContainer>
-        <div className="flex justify-between text-xs text-text-deep-grey mt-2">
+        <div className="flex justify-between text-xs text-gray-900 mt-2">
             {financeData.map((d, i) => (
                 <span key={i}>{d.name}</span>
             ))}
@@ -163,7 +163,7 @@ const FinanceCard = () => (
 
 const StockCard = () => (
     <div className="bg-white p-4 rounded-xl shadow-lg border border-border-grey h-full">
-        <h3 className="font-semibold text-text-deep-grey mb-4">Niveau de Stock Global</h3>
+        <h3 className="font-semibold text-gray-900 mb-4">Niveau de Stock Global</h3>
         <div className="flex items-center justify-center space-x-6">
             <ResponsiveContainer width={120} height={120}>
                 <PieChart>
@@ -204,27 +204,27 @@ const StockCard = () => (
 
 const ProjectsCard = () => (
     <div className="bg-white p-4 rounded-xl shadow-lg border border-border-grey h-full flex flex-col justify-between">
-        <h3 className="font-semibold text-text-deep-grey mb-2">Projets en Cours</h3>
-        <p className="text-sm text-text-deep-grey mb-4">K344490</p>
+        <h3 className="font-semibold text-gray-900 mb-2">Projets en Cours</h3>
+        <p className="text-sm text-gray-900 mb-4">K344490</p>
         
         <div className="mb-4">
             {/* Barre de progression simple */}
             <div className="flex justify-between items-center text-xs mb-1">
-                <span className="text-gray-900 font-bold">80%</span>
-                <span className="text-alert-orange font-bold">30%</span>
+                <span className="text-gray-800 font-bold">80%</span>
+                <span className="text-orange-300 font-bold">30%</span>
             </div>
             <div className="w-full bg-border-grey rounded-full h-2.5">
                 <div 
                     className="h-2.5 rounded-full" 
                     style={{ 
                         width: '80%', 
-                        background: `linear-gradient(to right, ${colors['gray-900']} 70%, ${colors['alert-orange']} 100%)` 
+                        background: `linear-gradient(to right, ${colors['gray-800']} 70%, ${colors['orange-300']} 100%)` 
                     }}
                 ></div>
             </div>
         </div>
         
-        <div className="text-center p-2 bg-alert-orange/20 rounded-lg text-sm text-alert-orange font-semibold flex items-center justify-center">
+        <div className="text-center p-2 bg-orange-300/20 rounded-lg text-sm text-orange-300 font-semibold flex items-center justify-center">
             <FaExclamationTriangle className="mr-2 text-base" /> 3 projets en retard
         </div>
     </div>
@@ -232,11 +232,11 @@ const ProjectsCard = () => (
 
 const RecentMovementsCard = () => (
     <div className="bg-white p-4 rounded-xl shadow-lg border border-border-grey lg:col-span-3">
-        <h3 className="font-semibold text-text-deep-grey mb-4">Mouvements Récents</h3>
+        <h3 className="font-semibold text-gray-900 mb-4">Mouvements Récents</h3>
         <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-border-grey">
                 <thead>
-                    <tr className="text-xs font-medium text-text-deep-grey uppercase tracking-wider text-left">
+                    <tr className="text-xs font-medium text-gray-900 uppercase tracking-wider text-left">
                         <th className="py-2 px-1">Client</th>
                         <th className="py-2 px-1 text-right">Montant</th>
                         <th className="py-2 px-1 text-center">Statut</th>
@@ -245,12 +245,12 @@ const RecentMovementsCard = () => (
                 </thead>
                 <tbody className="bg-white divide-y divide-border-grey">
                     {recentMovements.map((movement, index) => (
-                        <tr key={index} className="text-sm text-text-deep-grey">
+                        <tr key={index} className="text-sm text-gray-900">
                             <td className="py-2 px-1 font-medium">{movement.client}</td>
                             <td className="py-2 px-1 text-right">{movement.amount.toFixed(2)}</td>
                             <td className="py-2 px-1 text-center">
                                 <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                                    ${movement.status === 'Validé' ? 'bg-success-green/70 text-gray-900' : 'bg-alert-orange/70 text-gray-900'}
+                                    ${movement.status === 'Validé' ? 'bg-green-300/70 text-gray-800' : 'bg-orange-300/70 text-gray-800'}
                                 `}>
                                     {movement.status}
                                 </span>
@@ -278,13 +278,13 @@ const DashboardGeneral = () => {
             {/* Header Mobile (Top Bar) */}
             <header className="fixed top-0 left-0 w-full bg-background-light shadow-sm z-50 md:hidden">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <button onClick={toggleSidebar} className="text-text-deep-grey mr-3">
+                    <button onClick={toggleSidebar} className="text-gray-900 mr-3">
                         <FaBars className="text-xl" />
                     </button>
-                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold flex-grow">
-                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold flex-grow">
+                         <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
-                    <div className="flex items-center space-x-3 text-text-deep-grey">
+                    <div className="flex items-center space-x-3 text-gray-900">
                         <FaQuestionCircle className="text-xl"/>
                         <FaUserCircle className="text-xl"/>
                     </div>
@@ -296,7 +296,7 @@ const DashboardGeneral = () => {
 
             {/* Main Content Area */}
             <main className="flex-1 p-4 md:p-8 pt-20 md:pt-8 overflow-y-auto pb-16 md:pb-0">
-                <h1 className="font-heading text-3xl font-bold text-text-deep-grey mb-6">
+                <h1 className="font-heading text-3xl font-bold text-gray-900 mb-6">
                     Tableau de Bord Général
                 </h1>
 
