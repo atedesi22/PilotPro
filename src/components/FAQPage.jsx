@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'; // Ajout de useLocation
 
 // Import des icônes de react-icons
-import { FaPlay, FaSearch, FaPlus, FaMinus, FaRegBuilding, FaUserFriends, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, FaHome } from 'react-icons/fa';
+import { FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, 
+    FaSearch, FaPlus, FaMinus, FaQuestionCircle, FaUserCircle, FaRegBuilding,
+    FaLock, FaRegLifeRing, FaRegQuestionCircle } from 'react-icons/fa';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'; // Pour l'accordéon
 
 // --- Charte Graphique et Données ---
