@@ -11,7 +11,7 @@ import {
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'pilotpro-blue': '#34495E',
+    'gray-900': '#34495E',
     'success-green': '#A2E0D4',
     'alert-orange': '#F7A384',
     'text-deep-grey': '#4A4A4A',
@@ -75,7 +75,7 @@ const MobileNavbar = () => {
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-pilotpro-blue text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-16">
                 <Link to="/" className={getLinkClass('/')}>
                     <FaHome className="text-xl mb-0.5" /> Accueil
@@ -97,7 +97,7 @@ const MobileNavbar = () => {
 // --- Composant du Sélecteur Mensuel/Annuel ---
 const BillingToggle = ({ isMonthly, setIsMonthly }) => (
     <div className="flex items-center justify-center space-x-3 mb-10">
-        <span className={`text-sm font-semibold ${isMonthly ? 'text-pilotpro-blue' : 'text-text-deep-grey/70'}`}>
+        <span className={`text-sm font-semibold ${isMonthly ? 'text-gray-900' : 'text-text-deep-grey/70'}`}>
             Facturation Mensuelle
         </span>
         <label className="relative inline-flex items-center cursor-pointer">
@@ -108,11 +108,11 @@ const BillingToggle = ({ isMonthly, setIsMonthly }) => (
                 checked={!isMonthly} 
                 onChange={() => setIsMonthly(!isMonthly)}
             />
-            <div className={`w-11 h-6 bg-border-grey rounded-full peer peer-focus:ring-2 peer-focus:ring-pilotpro-blue peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-grey after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${!isMonthly ? 'peer-checked:bg-success-green' : ''}`}></div>
+            <div className={`w-11 h-6 bg-border-grey rounded-full peer peer-focus:ring-2 peer-focus:ring-gray-900 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-grey after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${!isMonthly ? 'peer-checked:bg-success-green' : ''}`}></div>
         </label>
-        <span className={`text-sm font-semibold flex items-center ${!isMonthly ? 'text-pilotpro-blue' : 'text-text-deep-grey/70'}`}>
+        <span className={`text-sm font-semibold flex items-center ${!isMonthly ? 'text-gray-900' : 'text-text-deep-grey/70'}`}>
             Annuelle 
-            <span className="ml-2 px-2 py-0.5 text-xs bg-success-green/70 text-pilotpro-blue rounded-full font-bold hidden md:inline">
+            <span className="ml-2 px-2 py-0.5 text-xs bg-success-green/70 text-gray-900 rounded-full font-bold hidden md:inline">
                 économisez 10%
             </span>
         </span>
@@ -130,15 +130,15 @@ const PricingCard = ({ plan, isMonthly }) => {
         : `${isMonthly ? 'Facturation mensuelle' : 'Facturation annuelle'}`;
 
     return (
-        <div className={`relative flex flex-col p-6 rounded-xl shadow-2xl transition-all duration-300 ${plan.recommended ? 'bg-pilotpro-blue text-white transform scale-105 border-2 border-success-green' : 'bg-white text-text-deep-grey border border-border-grey'}`}>
+        <div className={`relative flex flex-col p-6 rounded-xl shadow-2xl transition-all duration-300 ${plan.recommended ? 'bg-gray-900 text-white transform scale-105 border-2 border-success-green' : 'bg-white text-text-deep-grey border border-border-grey'}`}>
             
             {plan.recommended && (
-                <div className={`absolute top-0 right-0 py-1 px-3 text-xs font-bold rounded-tr-xl rounded-bl-lg ${plan.recommended ? 'bg-success-green text-pilotpro-blue' : ''}`}>
+                <div className={`absolute top-0 right-0 py-1 px-3 text-xs font-bold rounded-tr-xl rounded-bl-lg ${plan.recommended ? 'bg-success-green text-gray-900' : ''}`}>
                     RECOMMANDÉ
                 </div>
             )}
             
-            <h3 className={`text-2xl font-bold mb-1 ${plan.recommended ? 'text-white' : 'text-pilotpro-blue'}`}>
+            <h3 className={`text-2xl font-bold mb-1 ${plan.recommended ? 'text-white' : 'text-gray-900'}`}>
                 {plan.name}
             </h3>
             <p className={`text-sm mb-4 ${plan.recommended ? 'text-white/80' : 'text-text-deep-grey/70'}`}>
@@ -146,7 +146,7 @@ const PricingCard = ({ plan, isMonthly }) => {
             </p>
             
             <div className="mb-6">
-                <p className={`text-4xl font-extrabold ${plan.recommended ? 'text-success-green' : 'text-pilotpro-blue'}`}>
+                <p className={`text-4xl font-extrabold ${plan.recommended ? 'text-success-green' : 'text-gray-900'}`}>
                     {priceDisplay}
                 </p>
                 <p className={`text-sm ${plan.recommended ? 'text-white/70' : 'text-text-deep-grey/70'}`}>
@@ -173,8 +173,8 @@ const PricingCard = ({ plan, isMonthly }) => {
                 to="/register" 
                 className={`w-full text-center py-3 rounded-md font-semibold transition-colors 
                     ${plan.recommended 
-                        ? 'bg-success-green text-pilotpro-blue hover:bg-success-green/80' 
-                        : 'bg-pilotpro-blue text-white hover:bg-pilotpro-blue/90'
+                        ? 'bg-success-green text-gray-900 hover:bg-success-green/80' 
+                        : 'bg-gray-900 text-white hover:bg-gray-900/90'
                     }`}
             >
                 Choisir ce plan
@@ -194,15 +194,15 @@ const PricingPage = () => {
             {/* 1. Header / Navigation Bar (Desktop) */}
             <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-2xl font-bold">
-                        <div className="w-6 h-6 mr-2 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
+                        <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
-                        <Link to="/tarifs" className="hover:text-pilotpro-blue">Tarifs</Link>
-                        <Link to="/contact" className="hover:text-pilotpro-blue">Contact</Link>
-                        <Link to="/login" className="px-4 py-2 border border-pilotpro-blue text-pilotpro-blue rounded-md hover:bg-pilotpro-blue hover:text-white transition-colors">Se connecter</Link>
-                        <Link to="/register" className="px-4 py-2 bg-pilotpro-blue text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+                        <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
+                        <Link to="/tarifs" className="hover:text-gray-900">Tarifs</Link>
+                        <Link to="/contact" className="hover:text-gray-900">Contact</Link>
+                        <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
+                        <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
                     </div>
                 </nav>
             </header>
@@ -210,8 +210,8 @@ const PricingPage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
+                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-3 text-text-deep-grey">
                         <FaQuestionCircle className="text-xl"/>
@@ -225,7 +225,7 @@ const PricingPage = () => {
                 <section className="container mx-auto px-6 py-10 text-center">
                     
                     <h1 className="font-heading text-4xl md:text-5xl font-bold text-text-deep-grey mb-4">
-                        Pilotez votre entreprise vers le succès avec <span className="text-pilotpro-blue">PilotPro.</span>
+                        Pilotez votre entreprise vers le succès avec <span className="text-gray-900">PilotPro.</span>
                     </h1>
                     <p className="text-lg text-text-deep-grey mb-12 max-w-2xl mx-auto">
                         La solution ERP tout-en-un pour gérer finance, stock, et opérations, conçue pour votre croissance.
@@ -248,29 +248,29 @@ const PricingPage = () => {
                         
                         {/* FAQ 1 */}
                         <div className="p-4 bg-white rounded-lg shadow-md border border-border-grey">
-                            <h3 className="font-semibold text-pilotpro-blue mb-2 flex items-center justify-center md:justify-start">
+                            <h3 className="font-semibold text-gray-900 mb-2 flex items-center justify-center md:justify-start">
                                 <FaQuestionCircle className="mr-2 text-lg text-success-green" /> FAQ ?
                             </h3>
                             <p className="text-sm text-text-deep-grey">Des questions sur les licences multi-tenants?</p>
-                            <Link to="/faq" className="text-sm text-pilotpro-blue hover:underline mt-2 inline-block">Voir les réponses</Link>
+                            <Link to="/faq" className="text-sm text-gray-900 hover:underline mt-2 inline-block">Voir les réponses</Link>
                         </div>
                         
                         {/* FAQ 2 */}
                         <div className="p-4 bg-white rounded-lg shadow-md border border-border-grey">
-                             <h3 className="font-semibold text-pilotpro-blue mb-2 flex items-center justify-center md:justify-start">
+                             <h3 className="font-semibold text-gray-900 mb-2 flex items-center justify-center md:justify-start">
                                 <FaQuestionCircle className="mr-2 text-lg text-success-green" /> FAQ ?
                             </h3>
                             <p className="text-sm text-text-deep-grey">Besoin d'aide pour vos coûts unitaires ?</p>
-                            <Link to="/faq" className="text-sm text-pilotpro-blue hover:underline mt-2 inline-block">Voir les réponses</Link>
+                            <Link to="/faq" className="text-sm text-gray-900 hover:underline mt-2 inline-block">Voir les réponses</Link>
                         </div>
                         
                         {/* Contact */}
                         <div className="p-4 bg-white rounded-lg shadow-md border border-border-grey">
-                             <h3 className="font-semibold text-pilotpro-blue mb-2 flex items-center justify-center md:justify-start">
+                             <h3 className="font-semibold text-gray-900 mb-2 flex items-center justify-center md:justify-start">
                                 <FaLifeRing className="mr-2 text-lg text-success-green" /> Contactez-nous
                             </h3>
                             <p className="text-sm text-text-deep-grey">Des questions spécifiques avant de vous engager?</p>
-                            <Link to="/contact" className="text-sm text-pilotpro-blue hover:underline mt-2 inline-block">Nous Contacter</Link>
+                            <Link to="/contact" className="text-sm text-gray-900 hover:underline mt-2 inline-block">Nous Contacter</Link>
                         </div>
 
                     </div>
@@ -281,15 +281,15 @@ const PricingPage = () => {
             <footer className="hidden md:block bg-background-alt py-8 px-6 border-t border-border-grey">
                 <div className="container mx-auto flex justify-between items-center text-sm text-text-deep-grey">
                     <div className="flex space-x-6">
-                        <Link to="/about" className="hover:text-pilotpro-blue">À Propos</Link>
-                        <Link to="/terms" className="hover:text-pilotpro-blue">Conditions</Link>
-                        <Link to="/privacy" className="hover:text-pilotpro-blue">Confidentialité</Link>
+                        <Link to="/about" className="hover:text-gray-900">À Propos</Link>
+                        <Link to="/terms" className="hover:text-gray-900">Conditions</Link>
+                        <Link to="/privacy" className="hover:text-gray-900">Confidentialité</Link>
                     </div>
                     <p className="text-xs">&copy; {new Date().getFullYear()} PilotPro. Tous droits réservés.</p>
                     <div className="flex space-x-4 text-xl">
                         {/* Icônes de réseaux sociaux - Placeholders */}
-                        <FaPlay className="hover:text-pilotpro-blue" />
-                        <FaPlay className="hover:text-pilotpro-blue" />
+                        <FaPlay className="hover:text-gray-900" />
+                        <FaPlay className="hover:text-gray-900" />
                     </div>
                 </div>
             </footer>

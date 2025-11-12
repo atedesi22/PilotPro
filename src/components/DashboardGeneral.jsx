@@ -12,7 +12,7 @@ import { IoIosStats } from 'react-icons/io'; // Pour l'icône Dashboard
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'pilotpro-blue': '#34495E',
+    'gray-900': '#34495E',
     'success-green': '#A2E0D4',
     'alert-orange': '#F7A384',
     'text-deep-grey': '#4A4A4A',
@@ -31,7 +31,7 @@ const financeData = [
 ];
 
 const stockData = [
-    { name: 'Stock Disponible', value: 70, color: colors['pilotpro-blue'] },
+    { name: 'Stock Disponible', value: 70, color: colors['gray-900'] },
     { name: 'En Commande', value: 20, color: colors['success-green'] },
     { name: 'Stock Bas', value: 10, color: colors['alert-orange'] },
 ];
@@ -55,7 +55,7 @@ const MobileNavbar = () => {
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-pilotpro-blue text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-14">
                 <Link to="/dashboard" className={getLinkClass('/dashboard')}>
                     <FaTachometerAlt className="text-xl mb-0.5" /> Accueil
@@ -103,8 +103,8 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             >
                 {/* Logo et fermeture pour mobile */}
                 <div className="md:hidden flex justify-between items-center p-4 shadow-sm bg-white">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-xl font-bold">
-                        <div className="w-5 h-5 mr-1 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
+                        <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <button onClick={toggleSidebar} className="text-text-deep-grey">
                         <FaTimes className="text-2xl" />
@@ -122,11 +122,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                                 to={item.path}
                                 className={`flex items-center p-3 rounded-lg font-semibold transition-colors 
                                     ${isActive 
-                                        ? 'bg-pilotpro-blue text-white' 
+                                        ? 'bg-gray-900 text-white' 
                                         : 'text-text-deep-grey hover:bg-background-alt'
                                     }`}
                             >
-                                <IconComponent className={`mr-3 text-xl ${isActive ? 'text-success-green' : 'text-pilotpro-blue'}`} />
+                                <IconComponent className={`mr-3 text-xl ${isActive ? 'text-success-green' : 'text-gray-900'}`} />
                                 {item.name}
                             </Link>
                         );
@@ -141,7 +141,7 @@ const FinanceCard = () => (
     <div className="bg-white p-4 rounded-xl shadow-lg border border-border-grey h-full">
         <h3 className="font-semibold text-text-deep-grey mb-2">Performance Financière</h3>
         <p className="text-sm text-text-deep-grey mb-4">KPI</p>
-        <p className="font-bold text-3xl text-pilotpro-blue mb-4">125 000 €</p>
+        <p className="font-bold text-3xl text-gray-900 mb-4">125 000 €</p>
         <ResponsiveContainer width="100%" height={100}>
             <LineChart data={financeData}>
                 <Line 
@@ -210,7 +210,7 @@ const ProjectsCard = () => (
         <div className="mb-4">
             {/* Barre de progression simple */}
             <div className="flex justify-between items-center text-xs mb-1">
-                <span className="text-pilotpro-blue font-bold">80%</span>
+                <span className="text-gray-900 font-bold">80%</span>
                 <span className="text-alert-orange font-bold">30%</span>
             </div>
             <div className="w-full bg-border-grey rounded-full h-2.5">
@@ -218,7 +218,7 @@ const ProjectsCard = () => (
                     className="h-2.5 rounded-full" 
                     style={{ 
                         width: '80%', 
-                        background: `linear-gradient(to right, ${colors['pilotpro-blue']} 70%, ${colors['alert-orange']} 100%)` 
+                        background: `linear-gradient(to right, ${colors['gray-900']} 70%, ${colors['alert-orange']} 100%)` 
                     }}
                 ></div>
             </div>
@@ -250,7 +250,7 @@ const RecentMovementsCard = () => (
                             <td className="py-2 px-1 text-right">{movement.amount.toFixed(2)}</td>
                             <td className="py-2 px-1 text-center">
                                 <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                                    ${movement.status === 'Validé' ? 'bg-success-green/70 text-pilotpro-blue' : 'bg-alert-orange/70 text-pilotpro-blue'}
+                                    ${movement.status === 'Validé' ? 'bg-success-green/70 text-gray-900' : 'bg-alert-orange/70 text-gray-900'}
                                 `}>
                                     {movement.status}
                                 </span>
@@ -281,8 +281,8 @@ const DashboardGeneral = () => {
                     <button onClick={toggleSidebar} className="text-text-deep-grey mr-3">
                         <FaBars className="text-xl" />
                     </button>
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-xl font-bold flex-grow">
-                         <div className="w-5 h-5 mr-1 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold flex-grow">
+                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-3 text-text-deep-grey">
                         <FaQuestionCircle className="text-xl"/>

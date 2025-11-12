@@ -11,7 +11,7 @@ import {
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
-    'pilotpro-blue': '#34495E',
+    'gray-900': '#34495E',
     'success-green': '#A2E0D4',
     'text-deep-grey': '#4A4A4A',
     'background-light': '#FDFDFD',
@@ -30,7 +30,7 @@ const MobileNavbar = () => {
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-pilotpro-blue text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-16">
                 <Link to="/" className={getLinkClass('/')}>
                     <FaHome className="text-xl mb-0.5" /> Accueil
@@ -139,7 +139,7 @@ const ContactInfo = () => (
                 <FaEnvelope className="text-2xl text-success-green mr-4 flex-shrink-0" />
                 <div>
                     <p className="font-medium text-text-deep-grey">Email Professionnel</p>
-                    <a href="mailto:contact@pilotpro.com" className="text-pilotpro-blue hover:underline text-sm">
+                    <a href="mailto:contact@pilotpro.com" className="text-gray-900 hover:underline text-sm">
                         contact@pilotpro.com
                     </a>
                 </div>
@@ -149,7 +149,7 @@ const ContactInfo = () => (
                 <FaPhone className="text-2xl text-success-green mr-4 flex-shrink-0" />
                 <div>
                     <p className="font-medium text-text-deep-grey">Question Commerciale</p>
-                    <a href="tel:+0403346595" className="text-pilotpro-blue hover:underline text-sm">
+                    <a href="tel:+0403346595" className="text-gray-900 hover:underline text-sm">
                         +0403346595
                     </a>
                 </div>
@@ -167,9 +167,9 @@ const ContactInfo = () => (
         
         {/* Liens Sociaux */}
         <div className="mt-8 pt-4 border-t border-border-grey/50 flex space-x-4 text-2xl justify-center md:justify-start">
-            <a href="#" className="text-pilotpro-blue hover:text-pilotpro-blue/80 transition-colors"><FaTwitter /></a>
-            <a href="#" className="text-pilotpro-blue hover:text-pilotpro-blue/80 transition-colors"><FaFacebook /></a>
-            <a href="#" className="text-pilotpro-blue hover:text-pilotpro-blue/80 transition-colors"><FaLinkedin /></a>
+            <a href="#" className="text-gray-900 hover:text-gray-900/80 transition-colors"><FaTwitter /></a>
+            <a href="#" className="text-gray-900 hover:text-gray-900/80 transition-colors"><FaFacebook /></a>
+            <a href="#" className="text-gray-900 hover:text-gray-900/80 transition-colors"><FaLinkedin /></a>
         </div>
     </div>
 );
@@ -182,15 +182,15 @@ const ContactPage = () => {
             {/* 1. Header / Navigation Bar (Desktop) */}
             <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-2xl font-bold">
-                        <div className="w-6 h-6 mr-2 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
+                        <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
-                        <Link to="/pricing" className="hover:text-pilotpro-blue">Tarifs</Link>
-                        <Link to="/contact" className="hover:text-pilotpro-blue">Contact</Link>
-                        <Link to="/login" className="px-4 py-2 border border-pilotpro-blue text-pilotpro-blue rounded-md hover:bg-pilotpro-blue hover:text-white transition-colors">Se connecter</Link>
-                        <Link to="/register" className="px-4 py-2 bg-pilotpro-blue text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+                        <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
+                        <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
+                        <Link to="/contact" className="hover:text-gray-900">Contact</Link>
+                        <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
+                        <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
                     </div>
                 </nav>
             </header>
@@ -198,8 +198,8 @@ const ContactPage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
+                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-3 text-text-deep-grey">
                         <FaQuestionCircle className="text-xl"/>
@@ -210,7 +210,7 @@ const ContactPage = () => {
             </header>
 
             <main className="container mx-auto px-6 py-8 md:py-16 pt-20 md:pt-20 pb-20 md:pb-8">
-                <h1 className="font-heading text-3xl md:text-4xl font-bold text-pilotpro-blue mb-2 text-center md:text-left">
+                <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center md:text-left">
                     Contactez-nous
                 </h1>
                 <p className="text-lg text-text-deep-grey mb-10 text-center md:text-left">
@@ -230,7 +230,7 @@ const ContactPage = () => {
                     <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-4">
                         Nous sommes impatients de vous aider à réussir
                     </h3>
-                    <Link to="/" className="inline-flex items-center px-6 py-3 bg-background-alt text-pilotpro-blue border border-pilotpro-blue rounded-md font-semibold hover:bg-pilotpro-blue/10 transition-colors">
+                    <Link to="/" className="inline-flex items-center px-6 py-3 bg-background-alt text-gray-900 border border-gray-900 rounded-md font-semibold hover:bg-gray-900/10 transition-colors">
                         Retour à l'Accueil
                     </Link>
                 </section>
@@ -240,15 +240,15 @@ const ContactPage = () => {
             <footer className="hidden md:block bg-background-alt py-8 px-6 border-t border-border-grey">
                 <div className="container mx-auto flex justify-between items-center text-sm text-text-deep-grey">
                     <div className="flex space-x-6">
-                        <Link to="/about" className="hover:text-pilotpro-blue">À Propos</Link>
-                        <Link to="/terms" className="hover:text-pilotpro-blue">Conditions</Link>
-                        <Link to="/privacy" className="hover:text-pilotpro-blue">Confidentialité</Link>
+                        <Link to="/about" className="hover:text-gray-900">À Propos</Link>
+                        <Link to="/terms" className="hover:text-gray-900">Conditions</Link>
+                        <Link to="/privacy" className="hover:text-gray-900">Confidentialité</Link>
                     </div>
                     <p className="text-xs">&copy; {new Date().getFullYear()} PilotPro. Tous droits réservés.</p>
                     <div className="flex space-x-4 text-xl">
                         {/* Icônes de réseaux sociaux - Placeholders */}
-                        <FaPlay className="hover:text-pilotpro-blue" />
-                        <FaPlay className="hover:text-pilotpro-blue" />
+                        <FaPlay className="hover:text-gray-900" />
+                        <FaPlay className="hover:text-gray-900" />
                     </div>
                 </div>
             </footer>

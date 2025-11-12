@@ -10,7 +10,7 @@ import {
 
 // --- Configuration Couleurs & Styles (reprise de la charte) ---
 const colors = {
-    'pilotpro-blue': '#34495E',
+    'gray-900': '#34495E',
     'success-green': '#A2E0D4',
     'text-deep-grey': '#4A4A4A',
     'background-light': '#FDFDFD',
@@ -30,7 +30,7 @@ const MobileNavbar = () => {
         }`;
 
     return (
-        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-pilotpro-blue text-white shadow-lg z-50">
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
             <nav className="flex justify-around items-center h-14">
                 <Link to="/" className={getLinkClass('/')}>
                     <FaHome className="text-xl mb-0.5" /> Accueil
@@ -103,14 +103,14 @@ const RegisterPage = () => {
             {/* 1. Header / Navigation Bar (Desktop) */}
             <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-2xl font-bold">
-                        <div className="w-6 h-6 mr-2 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
+                        <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-6">
-                        <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
-                        <Link to="/pricing" className="hover:text-pilotpro-blue">Tarifs</Link>
-                        <Link to="/contact" className="hover:text-pilotpro-blue">Contact</Link>
-                        <Link to="/login" className="px-4 py-2 border border-pilotpro-blue text-pilotpro-blue rounded-md hover:bg-pilotpro-blue hover:text-white transition-colors">Se connecter</Link>
+                        <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
+                        <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
+                        <Link to="/contact" className="hover:text-gray-900">Contact</Link>
+                        <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
                         {/* Le bouton S'inscrire disparaît quand on est sur la page d'inscription */}
                     </div>
                 </nav>
@@ -119,8 +119,8 @@ const RegisterPage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
+                         <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
                     </Link>
                     <div className="flex items-center space-x-3 text-text-deep-grey">
                         <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
@@ -136,8 +136,8 @@ const RegisterPage = () => {
                     
                     <div className="flex flex-col items-center mb-8">
                         {/* Icône du logo PilotPro au-dessus du titre */}
-                        <div className="w-8 h-8 mb-2 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
-                        <h2 className="font-heading text-2xl font-bold text-pilotpro-blue">PilotPro</h2>
+                        <div className="w-8 h-8 mb-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
+                        <h2 className="font-heading text-2xl font-bold text-gray-900">PilotPro</h2>
                     </div>
 
                     <h1 className="font-heading text-center text-2xl font-semibold text-text-deep-grey mb-8">
@@ -149,7 +149,7 @@ const RegisterPage = () => {
                             <FaCheckCircle className="text-5xl text-success-green mx-auto mb-4" />
                             <p className="font-semibold text-lg mb-2">Inscription réussie !</p>
                             <p>Un lien d'activation vous a été envoyé par email pour finaliser la configuration de votre espace.</p>
-                            <Link to="/login" className="text-pilotpro-blue hover:underline mt-4 block">Connectez-vous ici</Link>
+                            <Link to="/login" className="text-gray-900 hover:underline mt-4 block">Connectez-vous ici</Link>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit}>
@@ -160,7 +160,7 @@ const RegisterPage = () => {
                                     placeholder="Nom de l'entreprise"
                                     value={formData.companyName}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.companyName ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all`}
+                                    className={`w-full p-3 border ${errors.companyName ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
                                 />
                                 {errors.companyName && <p className="text-red-500 text-sm mt-1">{errors.companyName}</p>}
                             </div>
@@ -171,7 +171,7 @@ const RegisterPage = () => {
                                     placeholder="Votre nom complet"
                                     value={formData.fullName}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.fullName ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all`}
+                                    className={`w-full p-3 border ${errors.fullName ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
                                 />
                                 {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
                             </div>
@@ -182,7 +182,7 @@ const RegisterPage = () => {
                                     placeholder="Email professionnel"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.email ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all`}
+                                    className={`w-full p-3 border ${errors.email ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
                                 />
                                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                             </div>
@@ -193,7 +193,7 @@ const RegisterPage = () => {
                                     placeholder="Mot de passe"
                                     value={formData.password}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.password ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all`}
+                                    className={`w-full p-3 border ${errors.password ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
                                 />
                                 {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                             </div>
@@ -204,7 +204,7 @@ const RegisterPage = () => {
                                     placeholder="Confirmer le mot de passe"
                                     value={formData.confirmPassword}
                                     onChange={handleChange}
-                                    className={`w-full p-3 border ${errors.confirmPassword ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all`}
+                                    className={`w-full p-3 border ${errors.confirmPassword ? 'border-red-500' : 'border-border-grey'} rounded-md focus:ring-gray-900 focus:border-gray-900 transition-all`}
                                 />
                                 {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>}
                             </div>
@@ -216,17 +216,17 @@ const RegisterPage = () => {
                                     id="acceptTerms"
                                     checked={formData.acceptTerms}
                                     onChange={handleChange}
-                                    className={`mr-2 h-4 w-4 rounded ${errors.acceptTerms ? 'border-red-500' : 'border-border-grey'} text-pilotpro-blue focus:ring-pilotpro-blue`}
+                                    className={`mr-2 h-4 w-4 rounded ${errors.acceptTerms ? 'border-red-500' : 'border-border-grey'} text-gray-900 focus:ring-gray-900`}
                                 />
                                 <label htmlFor="acceptTerms" className="text-sm text-text-deep-grey">
-                                    J'accepte les <Link to="/terms" className="text-pilotpro-blue hover:underline">Conditions Générales d'Utilisation</Link> et la <Link to="/privacy" className="text-pilotpro-blue hover:underline">Politique de Confidentialité</Link>
+                                    J'accepte les <Link to="/terms" className="text-gray-900 hover:underline">Conditions Générales d'Utilisation</Link> et la <Link to="/privacy" className="text-gray-900 hover:underline">Politique de Confidentialité</Link>
                                 </label>
                             </div>
                             {errors.acceptTerms && <p className="text-red-500 text-sm mb-4">{errors.acceptTerms}</p>}
 
                             <button
                                 type="submit"
-                                className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-pilotpro-blue/90 transition-colors mb-4"
+                                className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-gray-900/90 transition-colors mb-4"
                             >
                                 S'inscrire
                             </button>
@@ -240,7 +240,7 @@ const RegisterPage = () => {
                             </p>
                             <p className="text-center text-sm text-text-deep-grey">
                                 Déjà un compte ?{' '}
-                                <Link to="/login" className="text-pilotpro-blue hover:underline font-semibold">
+                                <Link to="/login" className="text-gray-900 hover:underline font-semibold">
                                     Connectez-vous
                                 </Link>
                             </p>

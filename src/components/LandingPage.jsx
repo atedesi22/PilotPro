@@ -1,7 +1,7 @@
 // src/components/LandingPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '../index.css';
 // Import des icônes de react-icons
 import { FaPlay, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt } from 'react-icons/fa';
 import { BsGraphUp } from 'react-icons/bs'; // Pour l'icône de décisions éclairées
@@ -18,15 +18,15 @@ const LandingPage = () => {
       {/* Header / Navigation Bar */}
       <header className="fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center text-pilotpro-blue font-heading w-6 h-6 text-2xl font-bold">
-            <img src="/logopilotpro.png" className='w-6 h-6' alt="Logo PilotPro" />
+          <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
+            <img src="/logopilotpro.png" className='w-35 h-15' alt="Logo PilotPro" />
           </Link>
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
-            <Link to="/pricing" className="hover:text-pilotpro-blue">Tarifs</Link>
-            <Link to="/contact" className="hover:text-pilotpro-blue">Contact</Link>
-            <Link to="/login" className="px-4 py-2 border border-pilotpro-blue text-pilotpro-blue rounded-md hover:bg-pilotpro-blue hover:text-white transition-colors">Se connecter</Link>
-            <Link to="/register" className="px-4 py-2 bg-pilotpro-blue text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+            <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
+            <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
+            <Link to="/contact" className="hover:text-gray-900">Contact</Link>
+            <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
+            <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
           </div>
           {/* Mobile Menu Icon (Hamburger) */}
           <div className="md:hidden">
@@ -38,11 +38,11 @@ const LandingPage = () => {
         {/* Mobile Navigation (Hidden by default, can be toggled with JS) */}
         {/* <div className="md:hidden bg-background-light pb-4">
           <div className="flex flex-col items-center space-y-2">
-            <Link to="/features" className="py-2 hover:text-pilotpro-blue">Fonctionnalités</Link>
-            <Link to="/pricing" className="py-2 hover:text-pilotpro-blue">Tarifs</Link>
-            <Link to="/contact" className="py-2 hover:text-pilotpro-blue">Contact</Link>
-            <Link to="/login" className="w-2/3 px-4 py-2 border border-pilotpro-blue text-pilotpro-blue rounded-md text-center">Se connecter</Link>
-            <Link to="/register" className="w-2/3 px-4 py-2 bg-pilotpro-blue text-white rounded-md text-center">S'inscrire</Link>
+            <Link to="/features" className="py-2 hover:text-gray-900">Fonctionnalités</Link>
+            <Link to="/pricing" className="py-2 hover:text-gray-900">Tarifs</Link>
+            <Link to="/contact" className="py-2 hover:text-gray-900">Contact</Link>
+            <Link to="/login" className="w-2/3 px-4 py-2 border border-gray-900 text-gray-900 rounded-md text-center">Se connecter</Link>
+            <Link to="/register" className="w-2/3 px-4 py-2 bg-gray-900 text-white rounded-md text-center">S'inscrire</Link>
           </div>
         </div> */}
       </header>
@@ -53,16 +53,16 @@ const LandingPage = () => {
         <section className="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between bg-background-light">
           <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
             <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight text-text-deep-grey mb-4">
-              Pilotez votre entreprise vers le succès avec <span className="text-pilotpro-blue">PilotPro</span>.
+              Pilotez votre entreprise vers le succès avec <span className="text-gray-500">PilotPro</span>.
             </h1>
             <p className="text-lg md:text-xl text-text-deep-grey mb-8">
               La solution ERP tout-en-un pour gérer finance, stock, RH, et opérations, conçue pour votre croissance.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link to="/register" className="px-6 py-3 bg-pilotpro-blue text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors text-lg">
+              <Link to="/register" className="px-6 py-3 bg-gray-900 text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors text-lg">
                 Commencer Gratuitement
               </Link>
-              <Link to="/demo" className="px-6 py-3 border border-pilotpro-blue text-pilotpro-blue rounded-md hover:bg-pilotpro-blue hover:text-white transition-colors text-lg">
+              <Link to="/demo" className="px-6 py-3 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors text-lg">
                 Demander une Démo
               </Link>
             </div>
@@ -83,25 +83,25 @@ const LandingPage = () => {
               {/* Stat Card 1 */}
               <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
                 <FaEye className="text-4xl text-success-green mb-4" /> {/* Icône pour visiteurs */}
-                <p className="font-heading text-4xl font-bold text-pilotpro-blue mb-2">45 000+</p>
+                <p className="font-heading text-4xl font-bold text-gray-900 mb-2">45 000+</p>
                 <p className="text-lg text-text-deep-grey">Visiteurs mensuels sur notre site</p>
               </div>
               {/* Stat Card 2 */}
               <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
                 <FaBuilding className="text-4xl text-alert-orange mb-4" /> {/* Icône pour entreprises */}
-                <p className="font-heading text-4xl font-bold text-pilotpro-blue mb-2">1 200+</p>
+                <p className="font-heading text-4xl font-bold text-gray-900 mb-2">1 200+</p>
                 <p className="text-lg text-text-deep-grey">Entreprises inscrites</p>
               </div>
               {/* Stat Card 3 */}
               <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
-                <FaUserFriends className="text-4xl text-pilotpro-blue mb-4" /> {/* Icône pour employés */}
-                <p className="font-heading text-4xl font-bold text-pilotpro-blue mb-2">25 000+</p>
+                <FaUserFriends className="text-4xl text-gray-900 mb-4" /> {/* Icône pour employés */}
+                <p className="font-heading text-4xl font-bold text-gray-900 mb-2">25 000+</p>
                 <p className="text-lg text-text-deep-grey">Employés gérés sur la plateforme</p>
               </div>
                 {/* Stat Card 4 (example of a fourth stat) */}
               <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
                 <BsGraphUp className="text-4xl text-success-green mb-4" /> {/* Icône pour croissance */}
-                <p className="font-heading text-4xl font-bold text-pilotpro-blue mb-2">98%</p>
+                <p className="font-heading text-4xl font-bold text-gray-900 mb-2">98%</p>
                 <p className="text-lg text-text-deep-grey">Taux de satisfaction client</p>
               </div>
             </div>
@@ -128,7 +128,7 @@ const LandingPage = () => {
             </div>
             {/* Feature Card 3 */}
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <FaUserFriends className="text-5xl text-pilotpro-blue mx-auto mb-4" />
+              <FaUserFriends className="text-5xl text-gray-900 mx-auto mb-4" />
               <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-2">Ressources Humaines</h3>
               <p className="text-text-deep-grey">Simplifiez la gestion de votre personnel et de la paie.</p>
             </div>
@@ -146,14 +146,14 @@ const LandingPage = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-deep-grey mb-8">
             Prêt à transformer votre gestion d'entreprise ?
           </h2>
-          <Link to="/register" className="px-8 py-4 bg-pilotpro-blue text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors text-xl">
+          <Link to="/register" className="px-8 py-4 bg-gray-900 text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors text-xl">
             Créer mon Compte
           </Link>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-pilotpro-blue py-8 px-6 text-white">
+      <footer className="bg-gray-900 py-8 px-6 text-white">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
           <p>&copy; {new Date().getFullYear()} PilotPro. Tous droits réservés.</p>
           <div className="flex space-x-6">

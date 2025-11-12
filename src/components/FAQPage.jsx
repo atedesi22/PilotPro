@@ -10,7 +10,7 @@ import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'; // Pour l'accord�
 
 // --- Charte Graphique et Données ---
 const colors = {
-    'pilotpro-blue': '#34495E',
+    'gray-900': '#34495E',
     'success-green': '#A2E0D4',
     'text-deep-grey': '#4A4A4A',
     'background-light': '#FDFDFD',
@@ -51,7 +51,7 @@ const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => (
       onClick={toggleAccordion}
     >
       {question}
-      {isOpen ? <FaMinus className="text-pilotpro-blue text-sm" /> : <FaPlus className="text-pilotpro-blue text-sm" />}
+      {isOpen ? <FaMinus className="text-gray-900 text-sm" /> : <FaPlus className="text-gray-900 text-sm" />}
     </button>
     {isOpen && (
       <div className="p-4 border-t border-border-grey bg-background-light">
@@ -71,7 +71,7 @@ const FAQPage = () => {
   };
 
   const MobileNavbar = () => (
-    <footer className="md:hidden fixed bottom-0 left-0 w-full bg-pilotpro-blue text-white shadow-lg z-50">
+    <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
       <nav className="flex justify-around items-center h-14">
         <Link to="/" className={`flex flex-col items-center text-xs ${location.pathname === '/' ? 'text-success-green' : 'text-white'}`}>
           <FaHome className="text-xl mb-0.5" /> Accueil
@@ -95,15 +95,15 @@ const FAQPage = () => {
       {/* Header (Desktop - visible sur grand écran) */}
       <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-2xl font-bold">
-             <div className="w-6 h-6 mr-2 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+          <Link to="/" className="flex items-center text-gray-900 font-heading text-2xl font-bold">
+             <div className="w-6 h-6 mr-2 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
           </Link>
           <div className="flex items-center space-x-6">
-            <Link to="/features" className="hover:text-pilotpro-blue">Fonctionnalités</Link>
-            <Link to="/pricing" className="hover:text-pilotpro-blue">Tarifs</Link>
-            <Link to="/contact" className="hover:text-pilotpro-blue">Contact</Link>
-            <Link to="/login" className="px-4 py-2 border border-pilotpro-blue text-pilotpro-blue rounded-md hover:bg-pilotpro-blue hover:text-white transition-colors">Se connecter</Link>
-            <Link to="/register" className="px-4 py-2 bg-pilotpro-blue text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
+            <Link to="/features" className="hover:text-gray-900">Fonctionnalités</Link>
+            <Link to="/pricing" className="hover:text-gray-900">Tarifs</Link>
+            <Link to="/contact" className="hover:text-gray-900">Contact</Link>
+            <Link to="/login" className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-900 hover:text-white transition-colors">Se connecter</Link>
+            <Link to="/register" className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
           </div>
         </nav>
       </header>
@@ -111,8 +111,8 @@ const FAQPage = () => {
       {/* Header (Mobile - Barre de navigation simplifiée pour petit écran) */}
       <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
         <nav className="px-4 py-3 flex items-center justify-between">
-            <Link to="/" className="flex items-center text-pilotpro-blue font-heading text-xl font-bold">
-                 <div className="w-5 h-5 mr-1 bg-pilotpro-blue [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+            <Link to="/" className="flex items-center text-gray-900 font-heading text-xl font-bold">
+                 <div className="w-5 h-5 mr-1 bg-gray-900 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
             </Link>
             <div className="flex items-center space-x-3 text-text-deep-grey">
                 {/* Icônes de connexion/utilisateur */}
@@ -124,7 +124,7 @@ const FAQPage = () => {
 
 
       <main className="container mx-auto px-6 py-8 md:py-16 pt-20 md:pt-20 pb-20 md:pb-8"> {/* Augmente le padding-bottom pour le mobile */}
-        <h1 className="font-heading text-3xl md:text-4xl font-bold text-pilotpro-blue mb-2">
+        <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-2">
           Questions Fréquentes
         </h1>
         <p className="text-lg text-text-deep-grey mb-8">
@@ -136,7 +136,7 @@ const FAQPage = () => {
           <input
             type="text"
             placeholder="Rechercher une question..."
-            className="w-full p-3 pl-10 border border-border-grey rounded-lg focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all"
+            className="w-full p-3 pl-10 border border-border-grey rounded-lg focus:ring-gray-900 focus:border-gray-900 transition-all"
           />
           <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-border-grey" />
         </div>
@@ -148,11 +148,11 @@ const FAQPage = () => {
           <div className="hidden lg:block space-y-2">
             <h3 className="font-heading text-xl font-semibold mb-3">Général</h3>
             {faqData.map((data, index) => (
-              <a key={index} href={`#${data.category.replace(/\s/g, '-')}`} className="block p-3 rounded-lg hover:bg-background-light hover:text-pilotpro-blue transition-colors">
+              <a key={index} href={`#${data.category.replace(/\s/g, '-')}`} className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-900 transition-colors">
                 {data.category}
               </a>
             ))}
-            <a href="#contact-us" className="block p-3 rounded-lg hover:bg-background-light hover:text-pilotpro-blue transition-colors">
+            <a href="#contact-us" className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-900 transition-colors">
                 Support
             </a>
           </div>
@@ -187,7 +187,7 @@ const FAQPage = () => {
             <h3 className="font-heading text-xl font-semibold text-text-deep-grey mb-4 md:mb-0">
                 Votre question n'est pas ici ?
             </h3>
-            <Link to="/contact" className="flex items-center px-6 py-3 bg-pilotpro-blue text-white rounded-md hover:bg-opacity-90 transition-colors">
+            <Link to="/contact" className="flex items-center px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-opacity-90 transition-colors">
                 <FaLifeRing className="mr-2" /> Contacter le Support
             </Link>
         </section>
@@ -195,7 +195,7 @@ const FAQPage = () => {
       </main>
 
       {/* Footer (Desktop - simple footer) */}
-      <footer className="hidden md:block bg-pilotpro-blue py-6 px-6 text-white mt-12">
+      <footer className="hidden md:block bg-gray-900 py-6 px-6 text-white mt-12">
         <div className="container mx-auto flex justify-between items-center text-sm">
           <p>&copy; {new Date().getFullYear()} PilotPro.</p>
           <div className="flex space-x-4">

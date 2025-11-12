@@ -10,7 +10,7 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
-        'pilotpro-blue': '#34495E',
+        'gray-900': '#34495E',
         'success-green': '#A2E0D4',
         'alert-orange': '#F7A384',
         'background-light': '#FDFDFD',
