@@ -13,7 +13,8 @@ const colors = {
     'gray-800': '#34495E',
     'green-300': '#A2E0D4',
     'gray-900': '#4A4A4A',
-    'background-light': '#FDFDFD',
+    'gray-200
+': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
     'button-dark': '#34495E',
@@ -98,7 +99,8 @@ const RegisterEmployeePage = () => {
         <div className="min-h-screen bg-background-alt font-sans text-gray-900">
             
             {/* 1. Header / Navigation Bar (Desktop) */}
-            <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
+            <header className="hidden md:flex fixed top-0 left-0 w-full bg-gray-200
+ shadow-sm z-50">
                 <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
                     <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
                                           <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
@@ -113,7 +115,8 @@ const RegisterEmployeePage = () => {
             </header>
             
             {/* 1. Header / Navigation Bar (Mobile) */}
-            <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
+            <header className="md:hidden fixed top-0 w-full bg-gray-200
+ shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
                     <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
                         <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
@@ -132,8 +135,7 @@ const RegisterEmployeePage = () => {
                     
                     <div className="flex flex-col items-center mb-8">
                         {/* Icône du logo PilotPro au-dessus du titre */}
-                        <div className="w-8 h-8 mb-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
-                        <h2 className="font-heading text-2xl font-bold text-gray-800">PilotPro</h2>
+                        <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
                     </div>
 
                     <h1 className="font-heading text-center text-2xl font-semibold text-gray-900 mb-8">
@@ -211,7 +213,7 @@ const RegisterEmployeePage = () => {
 
                             <button
                                 type="submit"
-                                className="w-full p-3 bg-button-dark text-white rounded-md font-semibold hover:bg-gray-800/90 transition-colors mb-4"
+                                className="w-full p-3 bg-gray-900 text-white rounded-md font-semibold hover:bg-gray-800/90 transition-colors mb-4"
                             >
                                 S'inscrire
                             </button>

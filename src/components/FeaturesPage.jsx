@@ -31,7 +31,8 @@ const colors = {
     'green-300': '#A2E0D4',
     'orange-300': '#F7A384',
     'gray-900': '#4A4A4A',
-    'background-light': '#FDFDFD',
+    'gray-200
+': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
     'button-dark': '#34495E',
@@ -69,10 +70,12 @@ const MobileNavbar = () => {
 
 const FeaturesPage = () => {
   return (
-    <div className="min-h-screen bg-background-light font-sans text-gray-900">
+    <div className="min-h-screen bg-gray-200 font-sans text-gray-900">
+
       
       {/* 1. Header / Navigation Bar (Desktop) */}
-      <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
+      <header className="hidden md:flex fixed top-0 left-0 w-full bg-gray-200
+ shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
             <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
@@ -88,7 +91,8 @@ const FeaturesPage = () => {
       </header>
       
       {/* 1. Header / Navigation Bar (Mobile) */}
-      <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
+      <header className="md:hidden fixed top-0 w-full bg-gray-200
+ shadow-sm z-50">
         <nav className="px-4 py-3 flex items-center justify-between">
             <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
                 <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />

@@ -47,40 +47,44 @@ const MobileNavbar = () => {
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-background-light font-sans text-gray-900">
+    <div className="min-h-screen bg-gray-200 font-sans text-gray-900">
+
       {/* 1. Header / Navigation Bar (Desktop) */}
-                  <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
-                      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-                          <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
-                            <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
-                          </Link>
-                          <div className="flex items-center space-x-6">
-                              <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
-                              <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
-                              <Link to="/contact" className="hover:text-gray-800">Contact</Link>
-                              <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
-                              {/* Le bouton S'inscrire disparaît quand on est sur la page d'inscription */}
-                          </div>
-                      </nav>
-                  </header>
-                  
-                  {/* 1. Header / Navigation Bar (Mobile) */}
-                  <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
-                      <nav className="px-4 py-3 flex items-center justify-between">
-                          <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
-                              <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
-                          </Link>
-                          <div className="flex items-center space-x-3 text-gray-900">
-                              <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
-                              <Link to="/login"><FaUserCircle className="text-xl"/></Link>
-                          </div>
-                      </nav>
-                  </header>
+      <header className="hidden md:flex fixed top-0 left-0 w-full bg-gray-200
+ shadow-sm z-50">
+          <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+              <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
+              </Link>
+              <div className="flex items-center space-x-6">
+                  <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
+                  <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
+                  <Link to="/contact" className="hover:text-gray-800">Contact</Link>
+                  <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
+                  {/* Le bouton S'inscrire disparaît quand on est sur la page d'inscription */}
+              </div>
+          </nav>
+      </header>
+      
+      {/* 1. Header / Navigation Bar (Mobile) */}
+      <header className="md:hidden fixed top-0 w-full bg-gray-200
+ shadow-sm z-50">
+          <nav className="px-4 py-3 flex items-center justify-between">
+              <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                  <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
+              </Link>
+              <div className="flex items-center space-x-3 text-gray-900">
+                  <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
+                  <Link to="/login"><FaUserCircle className="text-xl"/></Link>
+              </div>
+          </nav>
+      </header>
 
       <main className="pt-20"> {/* Padding top pour éviter le chevauchement avec le header fixe */}
 
         {/* Hero Section */}
-        <section className="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between bg-background-light">
+        <section className="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between bg-gray-200
+">
           <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
             <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight text-gray-900 mb-4">
               Pilotez votre entreprise vers le succès avec <span className="text-gray-500">PilotPro</span>.
@@ -139,7 +143,8 @@ const LandingPage = () => {
         </section>
 
         {/* Section Nos Fonctionnalités */}
-        <section className="container mx-auto px-6 py-16 bg-background-light">
+        <section className="container mx-auto px-6 py-16 bg-gray-200
+">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Nos Fonctionnalités
           </h2>

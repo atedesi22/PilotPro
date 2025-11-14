@@ -7,6 +7,7 @@ import FAQPage from './components/FAQPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import FeaturesPage from './components/FeaturesPage';
+import DashboardGeneral from './components/DashboardGeneral';
 // Importez la page Contact lorsque vous la créerez
 import ContactPage from './components/ContactPage';
 import SuperAdminMessages from './components/SuperAdminMessages'
@@ -32,6 +33,7 @@ function App() {
           
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/fonctionnalites" element={<FeaturesPage />} /> {/* Alias */}
+          <Route path="/user" element={<DashboardGeneral />} /> {/* Alias */}
           
           {/* <Route path="/contact" element={<ContactPage />} /> */}
           {/* <Route path="/demo" element={<div>Demande de Démo</div>} /> */}

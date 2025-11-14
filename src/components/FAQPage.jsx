@@ -13,7 +13,8 @@ const colors = {
     'gray-800': '#34495E',
     'green-300': '#A2E0D4',
     'gray-900': '#4A4A4A',
-    'background-light': '#FDFDFD',
+    'gray-200
+': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
 };
@@ -54,7 +55,8 @@ const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => (
       {isOpen ? <FaMinus className="text-gray-800 text-sm" /> : <FaPlus className="text-gray-800 text-sm" />}
     </button>
     {isOpen && (
-      <div className="p-4 border-t border-border-grey bg-background-light">
+      <div className="p-4 border-t border-border-grey bg-gray-200
+">
         <p className="text-gray-900 leading-relaxed">{answer}</p>
       </div>
     )}
@@ -93,7 +95,8 @@ const FAQPage = () => {
   return (
     <div className="min-h-screen bg-background-alt font-sans text-gray-900">
       {/* Header (Desktop - visible sur grand écran) */}
-      <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
+      <header className="hidden md:flex fixed top-0 left-0 w-full bg-gray-200
+ shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
                                <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
@@ -109,7 +112,8 @@ const FAQPage = () => {
       </header>
       
       {/* Header (Mobile - Barre de navigation simplifiée pour petit écran) */}
-      <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
+      <header className="md:hidden fixed top-0 w-full bg-gray-200
+ shadow-sm z-50">
         <nav className="px-4 py-3 flex items-center justify-between">
             <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
                  <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
@@ -148,11 +152,13 @@ const FAQPage = () => {
           <div className="hidden lg:block space-y-2">
             <h3 className="font-heading text-xl font-semibold mb-3">Général</h3>
             {faqData.map((data, index) => (
-              <a key={index} href={`#${data.category.replace(/\s/g, '-')}`} className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-800 transition-colors">
+              <a key={index} href={`#${data.category.replace(/\s/g, '-')}`} className="block p-3 rounded-lg hover:bg-gray-200
+ hover:text-gray-800 transition-colors">
                 {data.category}
               </a>
             ))}
-            <a href="#contact-us" className="block p-3 rounded-lg hover:bg-background-light hover:text-gray-800 transition-colors">
+            <a href="#contact-us" className="block p-3 rounded-lg hover:bg-gray-200
+ hover:text-gray-800 transition-colors">
                 Support
             </a>
           </div>
@@ -183,7 +189,8 @@ const FAQPage = () => {
         </div>
 
         {/* Section Contact - Si la question n'est pas trouvée */}
-        <section id="contact-us" className="flex flex-col md:flex-row items-center justify-between p-6 bg-background-light rounded-lg shadow-md mt-16 border border-border-grey">
+        <section id="contact-us" className="flex flex-col md:flex-row items-center justify-between p-6 bg-gray-200
+ rounded-lg shadow-md mt-16 border border-border-grey">
             <h3 className="font-heading text-xl font-semibold text-gray-900 mb-4 md:mb-0">
                 Votre question n'est pas ici ?
             </h3>
