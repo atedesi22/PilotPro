@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 // Import des icônes de react-icons
 import { FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, FaRegBuilding, FaUserCircle, FaQuestionCircle } from 'react-icons/fa';
+import { MdContactPage, MdMonetizationOn } from 'react-icons/md';
 
 // --- Configuration Couleurs & Styles (reprise de la charte) ---
 

@@ -8,6 +8,7 @@ import {
     FaCheck, FaTimes, FaQuestionCircle, FaUserCircle, FaRegBuilding,
     FaBars
 } from 'react-icons/fa';
+import { MdContactPage, MdMonetizationOn } from 'react-icons/md';
 
 // --- Configuration Couleurs & Styles ---
 const colors = {

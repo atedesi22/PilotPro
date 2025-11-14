@@ -7,6 +7,8 @@ import { FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing,
     FaSearch, FaPlus, FaMinus, FaQuestionCircle, FaUserCircle, FaRegBuilding,
     FaLock, FaRegLifeRing, FaRegQuestionCircle } from 'react-icons/fa';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'; // Pour l'accordéon
+import { MdContactPage, MdMonetizationOn } from 'react-icons/md';
+
 
 // --- Charte Graphique et Données ---
 const colors = {

@@ -7,6 +7,8 @@ import {
     FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, 
     FaUserCircle, FaQuestionCircle, FaCheckCircle
 } from 'react-icons/fa';
+import { MdContactPage, MdMonetizationOn } from 'react-icons/md';
+
 
 // --- Configuration Couleurs & Styles ---
 

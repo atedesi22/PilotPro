@@ -24,6 +24,9 @@ import {
     IoBrushOutline
 } from 'react-icons/io5';
 
+import { MdContactPage, MdMonetizationOn } from 'react-icons/md';
+
+
 
 // --- Configuration Couleurs & Styles ---
 const colors = {
