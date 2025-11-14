@@ -51,7 +51,7 @@ const MobileNavbar = () => {
     // Pour les dashboards, nous mettons en surbrillance la route /dashboard
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-green-300' : 'text-white'
+            location.pathname === path ? 'text-white' : 'text-white'
         }`;
 
     return (

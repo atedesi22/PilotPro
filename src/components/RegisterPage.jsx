@@ -1,5 +1,5 @@
 // src/components/RegisterPage.jsx
-import { React, useState } from 'react';
+import {React,  useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 // Import des icônes de react-icons
@@ -26,7 +26,7 @@ const MobileNavbar = () => {
     // Fonction pour déterminer si le lien est actif
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-green-300' : 'text-white'
+            location.pathname === path ? 'text-white' : 'text-white'
         }`;
 
     return (
@@ -119,8 +119,8 @@ const RegisterPage = () => {
             {/* 1. Header / Navigation Bar (Mobile) */}
             <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
                 <nav className="px-4 py-3 flex items-center justify-between">
-                    <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
-                         <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                    <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                        <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
                     </Link>
                     <div className="flex items-center space-x-3 text-gray-900">
                         <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
@@ -136,8 +136,8 @@ const RegisterPage = () => {
                     
                     <div className="flex flex-col items-center mb-8">
                         {/* Icône du logo PilotPro au-dessus du titre */}
-                        <div className="w-8 h-8 mb-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" />
-                        <h2 className="font-heading text-2xl font-bold text-gray-800">PilotPro</h2>
+                        <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
+
                     </div>
 
                     <h1 className="font-heading text-center text-2xl font-semibold text-gray-900 mb-8">

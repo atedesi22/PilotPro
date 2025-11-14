@@ -26,7 +26,7 @@ const MobileNavbar = () => {
     
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors p-2 ${
-            location.pathname.includes(path) ? 'text-green-300' : 'text-white'
+            location.pathname.includes(path) ? 'text-white' : 'text-white'
         }`;
 
     return (

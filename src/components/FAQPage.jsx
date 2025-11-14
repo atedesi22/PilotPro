@@ -73,16 +73,16 @@ const FAQPage = () => {
   const MobileNavbar = () => (
     <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
       <nav className="flex justify-around items-center h-14">
-        <Link to="/" className={`flex flex-col items-center text-xs ${location.pathname === '/' ? 'text-green-300' : 'text-white'}`}>
+        <Link to="/" className={`flex flex-col items-center text-xs ${location.pathname === '/' ? 'text-white' : 'text-white'}`}>
           <FaHome className="text-xl mb-0.5" /> Accueil
         </Link>
-        <Link to="/features" className={`flex flex-col items-center text-xs ${location.pathname === '/features' ? 'text-green-300' : 'text-white'}`}>
+        <Link to="/features" className={`flex flex-col items-center text-xs ${location.pathname === '/features' ? 'text-white' : 'text-white'}`}>
           <FaClipboardCheck className="text-xl mb-0.5" /> Fonctionnalités
         </Link>
-        <Link to="/pricing" className={`flex flex-col items-center text-xs ${location.pathname === '/pricing' ? 'text-green-300' : 'text-white'}`}>
+        <Link to="/pricing" className={`flex flex-col items-center text-xs ${location.pathname === '/pricing' ? 'text-white' : 'text-white'}`}>
           <FaMoneyBillWave className="text-xl mb-0.5" /> Tarifs
         </Link>
-        <Link to="/contact" className={`flex flex-col items-center text-xs ${location.pathname === '/contact' ? 'text-green-300' : 'text-white'}`}>
+        <Link to="/contact" className={`flex flex-col items-center text-xs ${location.pathname === '/contact' ? 'text-white' : 'text-white'}`}>
           <FaLifeRing className="text-xl mb-0.5" /> Contact
         </Link>
       </nav>

@@ -23,7 +23,7 @@ const MobileNavbar = () => {
     // Fonction pour déterminer si le lien est actif
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-green-300' : 'text-white'
+            location.pathname === path ? 'text-white' : 'text-white'
         }`;
 
     return (

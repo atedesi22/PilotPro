@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../index.css';
 // Import des icônes de react-icons
-import { FaPlay,FaMoneyBillWave,FaLifeRing, FaHome, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt, FaRegEye, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaPlay,FaMoneyBillWave, FaUserCircle, FaQuestionCircle, FaLifeRing, FaHome, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt, FaRegEye, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { BsGraphUp } from 'react-icons/bs'; // Pour l'icône de décisions éclairées
 import { MdOutlineSecurity } from 'react-icons/md'; // Pour l'icône de sécurité
 import { IoBuildOutline, IoBuildSharp } from 'react-icons/io5';
@@ -21,7 +21,7 @@ const MobileNavbar = () => {
     // Fonction pour déterminer si le lien est actif
     const getLinkClass = (path) => 
         `flex flex-col items-center text-xs transition-colors ${
-            location.pathname === path ? 'text-green-300' : 'text-white'
+            location.pathname === path ? 'text-white' : 'text-white'
         }`;
 
     return (
@@ -48,37 +48,34 @@ const MobileNavbar = () => {
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-background-light font-sans text-gray-900">
-      {/* Header / Navigation Bar */}
-      <header className="fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
-            <img src="/logopilotpro.png" className='w-35 h-15' alt="Logo PilotPro" />
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
-            <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
-            <Link to="/contact" className="hover:text-gray-800">Contact</Link>
-            <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
-            <Link to="/register" className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
-          </div>
-          {/* Mobile Menu Icon (Hamburger) */}
-          {/* <div className="md:hidden">
-            <button className="text-gray-900 focus:outline-none">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-          </div> */}
-        </nav>
-        {/* Mobile Navigation (Hidden by default, can be toggled with JS) */}
-        {/* <div className="md:hidden bg-background-light pb-4">
-          <div className="flex flex-col items-center space-y-2">
-            <Link to="/features" className="py-2 hover:text-gray-800">Fonctionnalités</Link>
-            <Link to="/pricing" className="py-2 hover:text-gray-800">Tarifs</Link>
-            <Link to="/contact" className="py-2 hover:text-gray-800">Contact</Link>
-            <Link to="/login" className="w-2/3 px-4 py-2 border border-gray-800 text-gray-800 rounded-md text-center">Se connecter</Link>
-            <Link to="/register" className="w-2/3 px-4 py-2 bg-gray-800 text-white rounded-md text-center">S'inscrire</Link>
-          </div>
-        </div> */}
-      </header>
+      {/* 1. Header / Navigation Bar (Desktop) */}
+                  <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
+                      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+                          <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                              <div className="w-6 h-6 mr-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                          </Link>
+                          <div className="flex items-center space-x-6">
+                              <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
+                              <Link to="/pricing" className="hover:text-gray-800">Tarifs</Link>
+                              <Link to="/contact" className="hover:text-gray-800">Contact</Link>
+                              <Link to="/login" className="px-4 py-2 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">Se connecter</Link>
+                              {/* Le bouton S'inscrire disparaît quand on est sur la page d'inscription */}
+                          </div>
+                      </nav>
+                  </header>
+                  
+                  {/* 1. Header / Navigation Bar (Mobile) */}
+                  <header className="md:hidden fixed top-0 w-full bg-background-light shadow-sm z-50">
+                      <nav className="px-4 py-3 flex items-center justify-between">
+                          <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
+                              <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
+                          </Link>
+                          <div className="flex items-center space-x-3 text-gray-900">
+                              <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
+                              <Link to="/login"><FaUserCircle className="text-xl"/></Link>
+                          </div>
+                      </nav>
+                  </header>
 
       <main className="pt-20"> {/* Padding top pour éviter le chevauchement avec le header fixe */}
 
