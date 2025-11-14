@@ -52,7 +52,7 @@ const LandingPage = () => {
                   <header className="hidden md:flex fixed top-0 left-0 w-full bg-background-light shadow-sm z-50">
                       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
                           <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
-                              <div className="w-6 h-6 mr-2 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                            <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
                           </Link>
                           <div className="flex items-center space-x-6">
                               <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>

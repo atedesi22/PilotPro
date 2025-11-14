@@ -282,11 +282,11 @@ const DashboardGeneral = () => {
                         <FaBars className="text-xl" />
                     </button>
                     <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold flex-grow">
-                         <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
+                        <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
                     </Link>
                     <div className="flex items-center space-x-3 text-gray-900">
-                        <FaQuestionCircle className="text-xl"/>
-                        <FaUserCircle className="text-xl"/>
+                                      <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
+                        <Link to="/login"><FaUserCircle className="text-xl"/></Link>
                     </div>
                 </nav>
             </header>
