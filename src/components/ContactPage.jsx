@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 
 // --- Configuration Couleurs & Styles ---
-s
+
 // --- Composant Navbar Mobile (en bas) ---
 const MobileNavbar = () => {
     const location = useLocation();

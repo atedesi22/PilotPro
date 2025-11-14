@@ -9,16 +9,7 @@ import {
 } from 'react-icons/fa';
 
 // --- Configuration Couleurs & Styles ---
-const colors = {
-    'gray-800': '#34495E',
-    'green-300': '#A2E0D4',
-    'gray-900': '#4A4A4A',
-    'gray-200
-': '#FDFDFD',
-    'background-alt': '#F5F7F9',
-    'border-grey': '#DDE6ED',
-    'button-dark': '#34495E',
-};
+
 
 // --- Composant Navbar Mobile (en bas) ---
 const MobileNavbar = () => {

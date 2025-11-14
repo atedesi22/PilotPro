@@ -30,9 +30,9 @@ const colors = {
     'gray-800': '#34495E',
     'green-300': '#A2E0D4',
     'orange-300': '#F7A384',
-    'gray-900': '#4A4A4A',
-    'gray-200
-': '#FDFDFD',
+    
+'gray-900': '#4A4A4A',
+    'background-light': '#FDFDFD',
     'background-alt': '#F5F7F9',
     'border-grey': '#DDE6ED',
     'button-dark': '#34495E',

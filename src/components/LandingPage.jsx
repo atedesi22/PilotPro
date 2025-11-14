@@ -148,7 +148,7 @@ const LandingPage = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Nos Fonctionnalités
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {/* Feature Card 1 */}
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <FaChartLine className="text-5xl text-green-300 mx-auto mb-4" />
@@ -159,13 +159,13 @@ const LandingPage = () => {
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <FaBoxes className="text-5xl text-orange-300 mx-auto mb-4" />
               <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">Gestion des Stocks</h3>
-              <p className="text-gray-900">Optimisez vos entrepôts, suivez vos produits en temps réel.</p>
+              <p className="text-gray-900">Optimisez vos entrepôts.</p>
             </div>
             {/* Feature Card 3 */}
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <FaUserFriends className="text-5xl text-gray-800 mx-auto mb-4" />
               <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">Ressources Humaines</h3>
-              <p className="text-gray-900">Simplifiez la gestion de votre personnel et de la paie.</p>
+              <p className="text-gray-900">Simplifiez la gestion de votre personnel.</p>
             </div>
             {/* Feature Card 4 */}
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
