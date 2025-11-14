@@ -6,15 +6,22 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
     FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, 
     FaChartLine, FaBoxOpen, FaSearchPlus, FaShieldAlt, 
-    FaUsers, FaLightbulb, FaCog, FaDollarSign, FaRocket, FaQuestionCircle, FaUserCircle, FaBars
+    FaUsers, FaLightbulb, FaCog, FaDollarSign, FaRocket, FaQuestionCircle, FaUserCircle, FaBars,
+    FaStore, 
+    FaBullhorn,
+    FaTachometerAlt, // Pour l'Automatisation / Opérations
+    FaHandshake
 } from 'react-icons/fa';
 
 // Import d'icônes plus spécifiques pour les détails
 import { 
     IoWalletOutline, // Portefeuille pour finance
     IoCubeOutline, // Cube pour stock
+    IoLayersOutline, // Pour le CRM/Pipeline
+    IoSettingsOutline, // Pour l'Automatisation
     IoAnalyticsOutline, // Graphique pour décisions
-    IoLockClosedOutline // Cadenas pour sécurité
+    IoLockClosedOutline ,// Cadenas pour sécurité
+    IoBrushOutline
 } from 'react-icons/io5';
 
 
@@ -139,6 +146,12 @@ const FeaturesPage = () => {
                     <h3 className="font-heading text-lg font-semibold text-gray-900 mb-1">Sécurité</h3>
                     <p className="text-xs text-gray-900">Confidentialité garantie</p>
                 </div>
+                {/* NOUVELLE FEATURE CARD : PilotCom : Création & Diffusion */}
+                 <div className="bg-white p-6 rounded-xl shadow-lg text-center border border-border-grey hover:shadow-xl transition-shadow">
+                    <FaBullhorn className="text-5xl text-pilotpro-blue mx-auto mb-3" /> {/* Utilisation de FaBullhorn */}
+                    <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">PilotCom</h3>
+                    <p className="text-xs text-text-deep-grey">Création & Diffusion Marketing</p>
+                </div>
                 {/* NOUVELLES FONCTIONNALITÉS POUR LA PAGE */}
                  <div className="bg-white p-6 rounded-xl shadow-lg text-center border border-border-grey hover:shadow-xl transition-shadow">
                     <FaUsers className="text-5xl text-gray-800 mx-auto mb-3" />
@@ -159,6 +172,19 @@ const FeaturesPage = () => {
                     <FaRocket className="text-5xl text-gray-800 mx-auto mb-3" />
                     <h3 className="font-heading text-lg font-semibold text-gray-900 mb-1">Automatisation</h3>
                     <p className="text-xs text-gray-900">Gains de temps massifs</p>
+                </div>
+                {/* NOUVELLE FEATURE CARD : Gestion Commerciale (CRM) */}
+                <div className="bg-white p-6 rounded-xl shadow-lg text-center border border-border-grey hover:shadow-xl transition-shadow">
+                    <FaHandshake className="text-5xl text-pilotpro-blue mx-auto mb-3" />
+                    <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">Commercial</h3>
+                    <p className="text-xs text-text-deep-grey">CRM, Devis & Pipeline</p>
+                </div>
+
+                {/* NOUVELLE FEATURE CARD : Automatisation Avancée */}
+                <div className="bg-white p-6 rounded-xl shadow-lg text-center border border-border-grey hover:shadow-xl transition-shadow">
+                    <FaTachometerAlt className="text-5xl text-pilotpro-blue mx-auto mb-3" />
+                    <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">Automatisation</h3>
+                    <p className="text-xs text-text-deep-grey">Règles & Webhooks IFTTT</p>
                 </div>
             </div>
         </section>
@@ -242,6 +268,83 @@ const FeaturesPage = () => {
                 <img src="https://i.imgur.com/gK9qQ4j.png" alt="Décisions Éclairées" className="max-w-full h-auto rounded-xl shadow-xl" />
             </div>
         </section>
+
+        <section className="container mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between mt-12 bg-white rounded-xl shadow-lg border border-border-grey">
+            <div className="md:w-1/2 text-center md:text-left md:pr-12">
+                <IoBrushOutline className="text-6xl text-pilotpro-blue mb-4 mx-auto md:mx-0" />
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-deep-grey mb-4">
+                    PilotCom : Création & Diffusion
+                </h2>
+                <p className="text-lg text-text-deep-grey mb-6">
+                    Devenez votre propre agence marketing. Créez des visuels, planifiez vos publications et analysez vos performances sur les réseaux sociaux, tout cela depuis une seule interface.
+                </p>
+                <ul className="list-disc list-inside text-left mx-auto md:mx-0 max-w-md space-y-2 text-text-deep-grey">
+                    <li>Outil de création visuelle intégré (type Canvas)</li>
+                    <li>Synchronisation et publication automatique sur les réseaux sociaux (Facebook, Instagram, etc.)</li>
+                    <li>Tableau de bord des statistiques de performance (reach, engagement)</li>
+                    <li>Calendrier éditorial centralisé</li>
+                </ul>
+                <Link to="/pricing" className="mt-8 inline-flex items-center px-6 py-3 bg-alert-orange text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors">
+                    Découvrez le Plan Entreprise
+                </Link>
+            </div>
+            <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                <img 
+                    src="https://i.imgur.com/x2vY8zY.png" // L'URL de l'image générée
+                    alt="PilotCom : Création et Diffusion Marketing" 
+                    className="max-w-full h-auto rounded-xl shadow-xl" 
+                />
+            </div>
+        </section>
+
+        {/* NOUVELLE SECTION DÉTAILLÉE : Gestion Commerciale (CRM) */}
+            <section className="container mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between mt-12 bg-white rounded-xl shadow-lg border border-border-grey">
+                <div className="md:w-1/2 text-center md:text-left md:pr-12">
+                    <IoLayersOutline className="text-6xl text-pilotpro-blue mb-4 mx-auto md:mx-0" />
+                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-deep-grey mb-4">
+                        Gestion Commerciale (CRM)
+                    </h2>
+                    <p className="text-lg text-text-deep-grey mb-6">
+                        Optimisez votre entonnoir de vente, du premier contact à la facturation finale. Unifiez les données clients pour une meilleure prise de décision.
+                    </p>
+                    <ul className="list-disc list-inside text-left mx-auto md:mx-0 max-w-md space-y-2 text-text-deep-grey">
+                        <li>**Pipeline de Ventes (Kanban) :** Suivi visuel des opportunités.</li>
+                        <li>Création et gestion des **Devis** (liés au stock et aux prix).</li>
+                        <li>**Journal d'Audit Détaillé :** Traçabilité complète des actions utilisateurs (sécurité et conformité).</li>
+                        <li>Conversion rapide des Devis en Factures (Module Finance).</li>
+                    </ul>
+                    <Link to="/pricing" className="mt-8 inline-flex items-center px-6 py-3 bg-alert-orange text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors">
+                        Découvrez le Plan Pro
+                    </Link>
+                </div>
+                <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                    
+                </div>
+            </section>
+
+            {/* NOUVELLE SECTION DÉTAILLÉE : Automatisation & Opérations */}
+            <section className="container mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row-reverse items-center justify-between mt-12 bg-white rounded-xl shadow-lg border border-border-grey">
+                <div className="md:w-1/2 text-center md:text-left md:pl-12">
+                    <IoSettingsOutline className="text-6xl text-pilotpro-blue mb-4 mx-auto md:mx-0" />
+                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-deep-grey mb-4">
+                        Automatisation Avancée & Connectivité
+                    </h2>
+                    <p className="text-lg text-text-deep-grey mb-6">
+                        Gagnez des heures par semaine grâce à des règles automatisées et ouvrez votre système à des applications tierces.
+                    </p>
+                    <ul className="list-disc list-inside text-left mx-auto md:mx-0 max-w-md space-y-2 text-text-deep-grey">
+                        <li>**Moteur d'Automatisation IFTTT :** Créez des règles "Si X, Alors Y" (Ex: Alerte Stock Bas &gt Créer Tâche Achat).</li>
+                        <li>**Webhooks Sortants :** Notifications en temps réel vers vos plateformes tierces (logistique, comptabilité externe).</li>
+                        <li>**Prévisions de Trésorerie** basées sur l'IA (analyse des transactions historiques).</li>
+                    </ul>
+                    <Link to="/pricing" className="mt-8 inline-flex items-center px-6 py-3 bg-pilotpro-blue text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors">
+                        Accédez aux Fonctionnalités Entreprise
+                    </Link>
+                </div>
+                <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                    [Image of a flow chart illustrating "If This Then That" automation rule]
+                </div>
+            </section>
 
 
         {/* 5. Témoignage rapide (facultatif mais ajoute de la crédibilité) */}

@@ -33,13 +33,18 @@ const plans = [
             { text: 'Dashboard avancé', available: true },
             { text: 'Optimisation avancée', available: false },
             { text: 'Support prioritaire', available: false },
-            { text: 'Contactez-nous', available: true },
+            { text: 'Vitrine Digitale (Limitée à 5 produits, Click & Collect)', available: true, isLimited: true }, 
+            { text: 'Suite Marketing PilotCom (Création & Diffusion)', available: false }, // <-- NOUVELLE FEATURE
+            { text: 'Gestion Commerciale (CRM basique : Leads)', available: false }, // Les Leads pourraient être ici
+            { text: 'Automatisation IFTTT et Webhooks', available: false }, 
+            { text: 'Journal d\'Audit Détaillé', available: false },
+            { text: 'Contactez-nous', available: true }, 
         ]
     },
     {
         name: 'Pro',
         slogan: 'Le choix le plus complet.',
-        monthlyPrice: 69,
+        monthlyPrice: 99, // Peut-être augmenter le prix pour refléter la valeur ajoutée
         yearlyDiscount: 'économisez 10%',
         recommended: true,
         features: [
@@ -47,19 +52,29 @@ const plans = [
             { text: 'Dashboard avancé', available: true },
             { text: 'Optimisation avancée', available: true },
             { text: 'Support prioritaire', available: true },
+            { text: 'Vitrine Digitale Intégrée (Complète : produits illimités, livraison, paiements)', available: true }, 
+            { text: 'Suite Marketing PilotCom (Création & Diffusion)', available: false }, // <-- NOUVELLE FEATURE
+            { text: 'Gestion Commerciale (CRM complet : Devis, Pipeline, Clients)', available: true }, // <-- AJOUT
+            { text: 'Automatisation IFTTT et Webhooks', available: false }, 
+            { text: 'Journal d\'Audit Détaillé', available: true }, // <-- AJOUT (Crucial pour toute PME)
             { text: 'Contactez-nous', available: true },
         ]
     },
     {
         name: 'Entreprise',
         slogan: 'Sur Devis, sur mesure.',
-        monthlyPrice: 39, // Prix fictif pour le design sur le mobile, mais le texte dit "Sur Devis"
+        monthlyPrice: 150, // Peut-être une base plus élevée
         yearlyDiscount: 'sur mesure',
         features: [
             { text: '10 utilisateurs maximum', available: true },
             { text: 'Dashboard avancé', available: true },
             { text: 'Optimisation avancée', available: true },
             { text: 'Support prioritaire', available: true },
+            { text: 'Vitrine Digitale Intégrée (Complète + fonctionnalités sur mesure)', available: true }, 
+            { text: 'Suite Marketing PilotCom (Création & Diffusion)', available: true }, // <-- NOUVELLE FEATURE (Incluse ici)
+            { text: 'Gestion Commerciale (CRM complet + Fonctionnalités sur mesure)', available: true },
+            { text: 'Automatisation IFTTT et Webhooks', available: true }, // <-- AJOUT
+            { text: 'Journal d\'Audit Détaillé', available: true },
             { text: 'Contactez-nous', available: true },
         ]
     }

@@ -1,5 +1,5 @@
 // src/components/RegisterPage.jsx
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 // Import des icônes de react-icons

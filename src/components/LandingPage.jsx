@@ -1,9 +1,9 @@
 // src/components/LandingPage.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { React, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../index.css';
 // Import des icônes de react-icons
-import { FaPlay, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt, FaRegEye } from 'react-icons/fa';
+import { FaPlay,FaMoneyBillWave,FaLifeRing, FaHome, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt, FaRegEye, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { BsGraphUp } from 'react-icons/bs'; // Pour l'icône de décisions éclairées
 import { MdOutlineSecurity } from 'react-icons/md'; // Pour l'icône de sécurité
 import { IoBuildOutline, IoBuildSharp } from 'react-icons/io5';
@@ -13,6 +13,37 @@ import { FaBuildingShield, FaEyeDropper, FaEyeLowVision, FaEyeSlash } from 'reac
 // Pour cet exemple, je vais simuler l'icône et utiliser FaPlay pour le logo textuel "PilotPro"
 // Si vous avez un SVG, vous l'importeriez et l'utiliseriez ici.
 // import { ReactComponent as PilotProLogoIcon } from '../assets/pilotpro-icon.svg'; // Exemple si vous avez un SVG
+
+// --- Composant Navbar Mobile (en bas) ---
+const MobileNavbar = () => {
+    const location = useLocation();
+    
+    // Fonction pour déterminer si le lien est actif
+    const getLinkClass = (path) => 
+        `flex flex-col items-center text-xs transition-colors ${
+            location.pathname === path ? 'text-green-300' : 'text-white'
+        }`;
+
+    return (
+        <footer className="md:hidden fixed bottom-0 left-0 w-full bg-gray-800 text-white shadow-lg z-50">
+            <nav className="flex justify-around items-center h-14">
+                <Link to="/" className={getLinkClass('/')}>
+                    <FaHome className="text-xl mb-0.5" /> Accueil
+                </Link>
+                <Link to="/features" className={getLinkClass('/features')}>
+                    <FaClipboardCheck className="text-xl mb-0.5" /> Fonctionnalités
+                </Link>
+                <Link to="/pricing" className={getLinkClass('/pricing')}>
+                    <FaMoneyBillWave className="text-xl mb-0.5" /> Tarifs
+                </Link>
+                <Link to="/contact" className={getLinkClass('/contact')}>
+                    <FaLifeRing className="text-xl mb-0.5" /> Contact
+                </Link>
+            </nav>
+        </footer>
+    );
+};
+
 
 const LandingPage = () => {
   return (
@@ -31,11 +62,11 @@ const LandingPage = () => {
             <Link to="/register" className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">S'inscrire</Link>
           </div>
           {/* Mobile Menu Icon (Hamburger) */}
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             <button className="text-gray-900 focus:outline-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
-          </div>
+          </div> */}
         </nav>
         {/* Mobile Navigation (Hidden by default, can be toggled with JS) */}
         {/* <div className="md:hidden bg-background-light pb-4">
@@ -164,13 +195,16 @@ const LandingPage = () => {
             <Link to="/privacy" className="hover:text-green-300">Confidentialité</Link>
           </div>
           <div className="flex space-x-4">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 text-2xl"><FaPlay /></a> {/* Placeholder, replace with actual social icons */}
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 text-2xl"><FaPlay /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 text-2xl"><FaPlay /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 text-2xl"><FaTwitter /></a> {/* Placeholder, replace with actual social icons */}
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 text-2xl"><FaFacebook /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 text-2xl"><FaLinkedin /></a>
           </div>
         </div>
       </footer>
+      {/* Footer (Mobile Navigation Bar) */}
+            <MobileNavbar />
     </div>
+    
   );
 };
 
