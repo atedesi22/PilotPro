@@ -5,7 +5,8 @@ import { Link, useLocation } from 'react-router-dom'; // Ajout de useLocation
 // Import des icônes de react-icons
 import { FaPlay, FaHome, FaClipboardCheck, FaMoneyBillWave, FaLifeRing, 
     FaSearch, FaPlus, FaMinus, FaQuestionCircle, FaUserCircle, FaRegBuilding,
-    FaLock, FaRegLifeRing, FaRegQuestionCircle } from 'react-icons/fa';
+    FaLock, FaRegLifeRing, FaRegQuestionCircle, 
+    FaUserFriends} from 'react-icons/fa';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'; // Pour l'accordéon
 import { MdContactPage, MdMonetizationOn } from 'react-icons/md';
 
@@ -48,7 +49,7 @@ const faqData = [
 
 // --- Composant Accordéon d'un Élément FAQ ---
 const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => (
-  <div className="mb-4 bg-white rounded-lg shadow-md border border-border-grey overflow-hidden">
+  <div className="mb-4 bg-white rounded-lg shadow-md  overflow-hidden">
     <button
       className="flex justify-between items-center w-full p-4 text-left font-semibold text-lg hover:bg-background-alt transition-colors"
       onClick={toggleAccordion}
@@ -95,13 +96,13 @@ const FAQPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-background-alt font-sans text-gray-900">
+    <div className="min-h-screen bg-gray-200 font-sans text-gray-900">
       {/* Header (Desktop - visible sur grand écran) */}
       <header className="hidden md:flex fixed top-0 left-0 w-full bg-gray-200
  shadow-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center text-gray-800 font-heading text-2xl font-bold">
-                               <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
+            <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />
           </Link>
           <div className="flex items-center space-x-6">
             <Link to="/features" className="hover:text-gray-800">Fonctionnalités</Link>
@@ -118,12 +119,10 @@ const FAQPage = () => {
  shadow-sm z-50">
         <nav className="px-4 py-3 flex items-center justify-between">
             <Link to="/" className="flex items-center text-gray-800 font-heading text-xl font-bold">
-                 <div className="w-5 h-5 mr-1 bg-gray-800 [clip-path:polygon(0%_100%,100%_0%,100%_50%,0%_50%)]" /> PilotPro
-            </Link>
+              <img src="/logopilotpro.png" className='w-25 h-10' alt="Logo PilotPro" />            </Link>
             <div className="flex items-center space-x-3 text-gray-900">
-                {/* Icônes de connexion/utilisateur */}
-                <FaRegBuilding className="text-xl"/>
-                <FaUserFriends className="text-xl"/>
+                <Link to="/faq"><FaQuestionCircle className="text-xl"/></Link>
+                <Link to="/login"><FaUserCircle className="text-xl"/></Link>
             </div>
         </nav>
       </header>
@@ -142,7 +141,7 @@ const FAQPage = () => {
           <input
             type="text"
             placeholder="Rechercher une question..."
-            className="w-full p-3 pl-10 border border-border-grey rounded-lg focus:ring-gray-800 focus:border-gray-800 transition-all"
+            className="w-full p-3 pl-10  rounded-lg focus:ring-gray-800 focus:border-gray-800 transition-all"
           />
           <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-border-grey" />
         </div>
@@ -192,12 +191,12 @@ const FAQPage = () => {
 
         {/* Section Contact - Si la question n'est pas trouvée */}
         <section id="contact-us" className="flex flex-col md:flex-row items-center justify-between p-6 bg-gray-200
- rounded-lg shadow-md mt-16 border border-border-grey">
+ rounded-lg shadow-md mt-16 ">
             <h3 className="font-heading text-xl font-semibold text-gray-900 mb-4 md:mb-0">
                 Votre question n'est pas ici ?
             </h3>
             <Link to="/contact" className="flex items-center px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-opacity-90 transition-colors">
-                <FaLifeRing className="mr-2" /> Contacter le Support
+                <MdContactPage className="mr-2" /> Contacter le Support
             </Link>
         </section>
 

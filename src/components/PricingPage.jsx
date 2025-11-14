@@ -173,14 +173,18 @@ const PricingCard = ({ plan, isMonthly }) => {
             
             <ul className="flex-grow space-y-3 mb-8">
                 {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-start text-sm">
+                    <li key={index} className="flex items-start text-sm mb-3">
                         {feature.available ? (
-                            <FaCheck className={`text-base mt-1 mr-3 flex-shrink-0 ${plan.recommended ? 'text-green-300' : 'text-green-300'}`} />
+                            <FaCheck className="flex-shrink-0 mr-3 mt-1 text-success-green" />
                         ) : (
-                            <FaTimes className={`text-base mt-1 mr-3 flex-shrink-0 ${plan.recommended ? 'text-white/40' : 'text-border-grey'}`} />
+                            <FaTimes className="flex-shrink-0 mr-3 mt-1 text-alert-orange" />
                         )}
-                        <span className={`${feature.available ? (plan.recommended ? 'text-white' : 'text-gray-900') : (plan.recommended ? 'text-white/60' : 'text-gray-900/60')}`}>
+                        <span className={feature.available ? 'text-text-deep-grey' : 'text-text-deep-grey/50 italic'}>
                             {feature.text}
+                            {/* Ajout de l'indicateur de limitation */}
+                            {feature.isLimited && (
+                                <span className="text-xs text-alert-orange font-semibold ml-2">(Limité)</span> 
+                            )}
                         </span>
                     </li>
                 ))}

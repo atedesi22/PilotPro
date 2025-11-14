@@ -158,6 +158,12 @@ const FeaturesPage = () => {
                     <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">PilotCom</h3>
                     <p className="text-xs text-text-deep-grey">Création & Diffusion Marketing</p>
                 </div>
+                {/* NOUVELLE FEATURE CARD : PilotCom : Création & Diffusion */}
+                 <div className="bg-white p-6 rounded-xl shadow-lg text-center border border-border-grey hover:shadow-xl transition-shadow">
+                    <FaBullhorn className="text-5xl text-pilotpro-blue mx-auto mb-3" /> {/* Utilisation de FaBullhorn */}
+                    <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">PilotCom</h3>
+                    <p className="text-xs text-text-deep-grey">Création & Diffusion Marketing</p>
+                </div>
                 {/* NOUVELLES FONCTIONNALITÉS POUR LA PAGE */}
                  <div className="bg-white p-6 rounded-xl shadow-lg text-center border border-border-grey hover:shadow-xl transition-shadow">
                     <FaUsers className="text-5xl text-gray-800 mx-auto mb-3" />
@@ -351,6 +357,34 @@ const FeaturesPage = () => {
                     [Image of a flow chart illustrating "If This Then That" automation rule]
                 </div>
             </section>
+            {/* NOUVELLE SECTION DÉTAILLÉE : PilotCom : Création & Diffusion */}
+        <section className="container mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between mt-12 bg-white rounded-xl shadow-lg border border-border-grey">
+            <div className="md:w-1/2 text-center md:text-left md:pr-12">
+                <IoBrushOutline className="text-6xl text-pilotpro-blue mb-4 mx-auto md:mx-0" />
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-deep-grey mb-4">
+                    PilotCom : Création & Diffusion
+                </h2>
+                <p className="text-lg text-text-deep-grey mb-6">
+                    Devenez votre propre agence marketing. Créez des visuels, planifiez vos publications et analysez vos performances sur les réseaux sociaux, tout cela depuis une seule interface.
+                </p>
+                <ul className="list-disc list-inside text-left mx-auto md:mx-0 max-w-md space-y-2 text-text-deep-grey">
+                    <li>Outil de création visuelle intégré (type Canvas)</li>
+                    <li>Synchronisation et publication automatique sur les réseaux sociaux (Facebook, Instagram, etc.)</li>
+                    <li>Tableau de bord des statistiques de performance (reach, engagement)</li>
+                    <li>Calendrier éditorial centralisé</li>
+                </ul>
+                <Link to="/pricing" className="mt-8 inline-flex items-center px-6 py-3 bg-alert-orange text-white rounded-md shadow-lg hover:bg-opacity-90 transition-colors">
+                    Découvrez le Plan Entreprise
+                </Link>
+            </div>
+            <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                <img 
+                    src="https://i.imgur.com/x2vY8zY.png" // L'URL de l'image générée
+                    alt="PilotCom : Création et Diffusion Marketing" 
+                    className="max-w-full h-auto rounded-xl shadow-xl" 
+                />
+            </div>
+        </section>
 
 
         {/* 5. Témoignage rapide (facultatif mais ajoute de la crédibilité) */}

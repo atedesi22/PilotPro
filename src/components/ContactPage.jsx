@@ -101,7 +101,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-border-grey h-full">
+        <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full">
             <h3 className="font-heading text-xl font-semibold text-gray-900 mb-6">
                 Envoyez-nous un message
             </h3>
@@ -113,7 +113,58 @@ const ContactForm = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
-               {/* ... (champs du formulaire) ... */}
+                <div>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Votre Nom Complet"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-border-grey rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all"
+                    />
+                </div>
+                <div>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Votre Email Professionnel"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-border-grey rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all"
+                    />
+                </div>
+                <div>
+                    <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-border-grey rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all bg-white"
+                    >
+                        <option value="Question Commerciale">Question Commerciale</option>
+                        <option value="Support Technique">Support Technique</option>
+                        <option value="Partenariat">Partenariat</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea
+                        name="message"
+                        placeholder="Votre Message"
+                        rows="4"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-border-grey rounded-md focus:ring-pilotpro-blue focus:border-pilotpro-blue transition-all"
+                    ></textarea>
+                </div>
+                <button
+                    type="submit"
+                    className="w-full p-3 bg-pilotpro-blue text-white rounded-md font-semibold hover:bg-pilotpro-blue/90 transition-colors"
+                >
+                    Envoyer le message
+                </button>
             </form>
         </div>
     );
@@ -121,7 +172,7 @@ const ContactForm = () => {
 
 // --- Composant Informations de Contact ---
 const ContactInfo = () => (
-    <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-border-grey h-full">
+    <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full">
         <h3 className="font-heading text-xl font-semibold text-gray-900 mb-6">
             Autres moyens de nous joindre
         </h3>
@@ -142,7 +193,7 @@ const ContactInfo = () => (
                 <div>
                     <p className="font-medium text-gray-900">Question Commerciale</p>
                     <a href="tel:+0403346595" className="text-gray-800 hover:underline text-sm">
-                        +0403346595
+                        (+237) 621 860 030
                     </a>
                 </div>
             </div>
@@ -223,7 +274,7 @@ const ContactPage = () => {
                     <h3 className="font-heading text-xl font-semibold text-gray-900 mb-4">
                         Nous sommes impatients de vous aider à réussir
                     </h3>
-                    <Link to="/" className="inline-flex items-center px-6 py-3 bg-background-alt text-gray-800 border border-gray-800 rounded-md font-semibold hover:bg-gray-800/10 transition-colors">
+                    <Link to="/" className="inline-flex items-center px-6 py-3 bg-gray-900 text-white border border-gray-800 rounded-md font-semibold hover:bg-gray-800/10 transition-colors">
                         Retour à l'Accueil
                     </Link>
                 </section>
