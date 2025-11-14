@@ -31,10 +31,10 @@ const MobileNavbar = () => {
                     <FaClipboardCheck className="text-xl mb-0.5" /> Fonctionnalités
                 </Link>
                 <Link to="/pricing" className={getLinkClass('/pricing')}>
-                    <FaMoneyBillWave className="text-xl mb-0.5" /> Tarifs
+                    <MdMonetizationOn className="text-xl mb-0.5" /> Tarifs
                 </Link>
                 <Link to="/contact" className={getLinkClass('/contact')}>
-                    <FaLifeRing className="text-xl mb-0.5" /> Contact
+                    <MdContactPage className="text-xl mb-0.5" /> Contact
                 </Link>
             </nav>
         </footer>

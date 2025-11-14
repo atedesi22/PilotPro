@@ -3,11 +3,11 @@ import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../index.css';
 // Import des icônes de react-icons
-import { FaPlay,FaMoneyBillWave, FaUserCircle, FaQuestionCircle, FaLifeRing, FaHome, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt, FaRegEye, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaPlay,FaMoneyBillWave, FaUserCircle, FaQuestionCircle, FaLifeRing, FaHome, FaEye, FaBuilding, FaUsers, FaChartLine, FaBoxes, FaUserFriends, FaClipboardCheck, FaShieldAlt, FaRegEye, FaFacebook, FaTwitter, FaLinkedin, FaSearchPlus } from 'react-icons/fa';
 import { BsGraphUp } from 'react-icons/bs'; // Pour l'icône de décisions éclairées
-import { MdOutlineSecurity } from 'react-icons/md'; // Pour l'icône de sécurité
-import { IoBuildOutline, IoBuildSharp } from 'react-icons/io5';
-import { FaBuildingShield, FaEyeDropper, FaEyeLowVision, FaEyeSlash } from 'react-icons/fa6';
+import { MdContactPage, MdDownload, MdMonetizationOn, MdOutlineSecurity } from 'react-icons/md'; // Pour l'icône de sécurité
+import { IoBuildOutline, IoBuildSharp, IoDownload } from 'react-icons/io5';
+import { FaBoxOpen, FaBuildingShield, FaDownload, FaEyeDropper, FaEyeLowVision, FaEyeSlash } from 'react-icons/fa6';
 
 // Import de votre icône de logo (si vous l'avez en SVG ou un composant React)
 // Pour cet exemple, je vais simuler l'icône et utiliser FaPlay pour le logo textuel "PilotPro"
@@ -34,10 +34,10 @@ const MobileNavbar = () => {
                     <FaClipboardCheck className="text-xl mb-0.5" /> Fonctionnalités
                 </Link>
                 <Link to="/pricing" className={getLinkClass('/pricing')}>
-                    <FaMoneyBillWave className="text-xl mb-0.5" /> Tarifs
+                    <MdMonetizationOn className="text-xl mb-0.5" /> Tarifs
                 </Link>
                 <Link to="/contact" className={getLinkClass('/contact')}>
-                    <FaLifeRing className="text-xl mb-0.5" /> Contact
+                    <MdContactPage className="text-xl mb-0.5" /> Contact
                 </Link>
             </nav>
         </footer>
@@ -142,36 +142,35 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Section Nos Fonctionnalités */}
-        <section className="container mx-auto px-6 py-16 bg-gray-200
-">
+        {/* 4. Section Nos Fonctionnalités */}
+        <section className="container mx-auto px-6 py-12 md:py-16 bg-background-light">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Nos Fonctionnalités
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {/* Feature Card 1 */}
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <FaChartLine className="text-5xl text-green-300 mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">Gestion Financière</h3>
-              <p className="text-gray-900">Gérez vos flux financiers avec précision et clarté.</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Feature Card 1: Finance */}
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+              <FaChartLine className="text-5xl text-green-300 mx-auto mb-3" />
+              <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">Finance</h3>
+              <p className="text-xs text-text-deep-grey">Gérez vos flux trésorerie</p>
             </div>
-            {/* Feature Card 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <FaBoxes className="text-5xl text-orange-300 mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">Gestion des Stocks</h3>
-              <p className="text-gray-900">Optimisez vos entrepôts.</p>
+            {/* Feature Card 2: Stock */}
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+              <FaBoxOpen className="text-5xl text-orange-300 mx-auto mb-3" />
+              <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">Stock</h3>
+              <p className="text-xs text-text-deep-grey">Optimisez vos entrepôts</p>
             </div>
-            {/* Feature Card 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <FaUserFriends className="text-5xl text-gray-800 mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">Ressources Humaines</h3>
-              <p className="text-gray-900">Simplifiez la gestion de votre personnel.</p>
+            {/* Feature Card 3: Décisions */}
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+              <FaSearchPlus className="text-5xl text-blue-300 mx-auto mb-3" />
+              <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">Décisions Éclairées</h3>
+              <p className="text-xs text-text-deep-grey">Écartez vos erreurs</p>
             </div>
-            {/* Feature Card 4 */}
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <FaClipboardCheck className="text-5xl text-green-300 mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-semibold text-gray-900 mb-2">Gestion Opérationnelle</h3>
-              <p className="text-gray-900">Suivez vos projets et vos clients de A à Z.</p>
+            {/* Feature Card 4: Sécurité */}
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+              <FaShieldAlt className="text-5xl text-green-300 mx-auto mb-3" />
+              <h3 className="font-heading text-lg font-semibold text-text-deep-grey mb-1">Sécurité</h3>
+              <p className="text-xs text-text-deep-grey">Confidentialité garantie</p>
             </div>
           </div>
         </section>
@@ -205,6 +204,15 @@ const LandingPage = () => {
       </footer>
       {/* Footer (Mobile Navigation Bar) */}
             <MobileNavbar />
+
+            {/* 8. Bouton Flottant (PWA Download) */}
+      <button 
+        title="Télécharger l'Application"
+        onClick={() => alert("Simule le téléchargement de la PWA (Service Worker) !")}
+        className="fixed bottom-20 right-4 w-15 md:bottom-8 md:right-8 bg-blue-300/90 p-4 rounded-full shadow-2xl text-pilotpro-blue z-40 hover:bg-green-300/80 transition-transform transform hover:scale-110"
+      >
+          <MdDownload className="text-2xl text-center" />
+      </button>
     </div>
     
   );

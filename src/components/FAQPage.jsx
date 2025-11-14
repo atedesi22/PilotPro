@@ -82,10 +82,10 @@ const FAQPage = () => {
           <FaClipboardCheck className="text-xl mb-0.5" /> Fonctionnalités
         </Link>
         <Link to="/pricing" className={`flex flex-col items-center text-xs ${location.pathname === '/pricing' ? 'text-white' : 'text-white'}`}>
-          <FaMoneyBillWave className="text-xl mb-0.5" /> Tarifs
+          <MdMonetizationOn className="text-xl mb-0.5" /> Tarifs
         </Link>
         <Link to="/contact" className={`flex flex-col items-center text-xs ${location.pathname === '/contact' ? 'text-white' : 'text-white'}`}>
-          <FaLifeRing className="text-xl mb-0.5" /> Contact
+          <MdContactPage className="text-xl mb-0.5" /> Contact
         </Link>
       </nav>
     </footer>
