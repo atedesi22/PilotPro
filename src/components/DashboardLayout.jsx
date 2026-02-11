@@ -1,4 +1,4 @@
-import { Bell, Boxes, Cpu, LayoutDashboard, Megaphone, PieChart, Search, ShieldCheck, Wallet, Zap } from "lucide-react";
+import { Bell, Boxes, Cpu, LayoutDashboard, Megaphone, PieChart, Rocket, Search, ShieldCheck, Wallet, Zap } from "lucide-react";
 import { useState } from "react";
 
 

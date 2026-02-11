@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, Megaphone, Shield, Zap } from "lucide-react";
 import '../../index.css'
+import { Link } from "react-router-dom";
 
 
 const LandingPage = () => {
@@ -23,9 +24,9 @@ const LandingPage = () => {
             <button className="flex items-center justify-center px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
               Commencer gratuitement <ArrowRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all">
+            <Link to='/app/demo' className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all">
               Voir la démo
-            </button>
+            </Link>
           </div>
         </div>
       </section>
