@@ -4,7 +4,7 @@ import PublicLayout from './layouts/PublicLayout';
 import LandingPage from './pages/public/LandingPage';
 import PricingPage from './pages/public/PricingPage';
 import AppLayout from './layouts/AppLayout';
-import Dashboard from './pages/app/Dashboard';
+import Dashboard from './components/DashboardLayout';
 
 
 function App() {
