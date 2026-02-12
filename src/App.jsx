@@ -5,6 +5,8 @@ import LandingPage from './pages/public/LandingPage';
 import PricingPage from './pages/public/PricingPage';
 import AppLayout from './layouts/AppLayout';
 import Dashboard from './components/DashboardLayout';
+import DashboardHome from './pages/app/DashboardHome';
+import Finance from './pages/app/Finance';
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
 
         {/* Section Application (Protégée/Multi-tenant) */}
         <Route path='/app/:companySlug' element={<AppLayout/>}>
-          <Route index element={<Dashboard/>}/>
+          <Route index element={<DashboardHome/>}/>
+          <Route path='finance' element={<Finance/>}/>
         </Route>
         </Routes>
       </Router>

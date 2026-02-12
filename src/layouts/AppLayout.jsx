@@ -8,7 +8,7 @@ const AppLayout = () => {
 
     return(
         <DashboardLayout userTier="Pro">
-            {/* <Outlet/> */}
+            <Outlet/>
         </DashboardLayout>
     )
 }
