@@ -7,6 +7,7 @@ import AppLayout from './layouts/AppLayout';
 import Dashboard from './components/DashboardLayout';
 import DashboardHome from './pages/app/DashboardHome';
 import Finance from './pages/app/Finance';
+import Stock from './pages/app/Stock';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/app/:companySlug' element={<AppLayout/>}>
           <Route index element={<DashboardHome/>}/>
           <Route path='finance' element={<Finance/>}/>
+          <Route path="stock" element={<Stock />}/>
         </Route>
         </Routes>
       </Router>
