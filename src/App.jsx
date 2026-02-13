@@ -11,6 +11,8 @@ import Stock from './pages/app/Stock';
 import PilotCom from './pages/app/PilotCom';
 import Analytics from './pages/app/Analytics';
 import Automation from './pages/app/Automation';
+import AboutPage from './pages/public/AboutPage';
+import LoginPage from './pages/public/LoginPage';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route element={<PublicLayout/>}>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/pricing' element={<PricingPage/>}/>
+          <Route path='/about' element={<AboutPage/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
         </Route>
 
         {/* Section Application (Protégée/Multi-tenant) */}

@@ -13,9 +13,9 @@ const DashboardLayout = ({ children, userTier = 'Pro' }) => {
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/', tier: 'Standard' },
     { icon: <Wallet size={20} />, label: 'Finance', path: '/finance', tier: 'Standard' },
     { icon: <Boxes size={20} />, label: 'Stock', path: '/stock', tier: 'Standard' },
-    { icon: <PieChart size={20} />, label: 'Décisions', path: '/bi', tier: 'Essential' },
+    { icon: <PieChart size={20} />, label: 'Décisions', path: '/ai', tier: 'Essential' },
     { icon: <Megaphone size={20} />, label: 'PilotCom', path: '/marketing', tier: 'Entreprise' },
-    { icon: <Cpu size={20} />, label: 'IA Analyse', path: '/ai', tier: 'Pro' },
+    // { icon: <Cpu size={20} />, label: 'IA Analyse', path: '/ai', tier: 'Pro' },
     { icon: <Zap size={20} />, label: 'Automation', path: '/auto', tier: 'Entreprise' },
   ];
 
