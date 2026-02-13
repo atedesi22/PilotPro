@@ -10,7 +10,7 @@ const DashboardLayout = ({ children, userTier = 'Pro' }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Fermé par défaut sur mobile
   const {companySlug} = useParams();
   const menuItems = [
-    { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/demo', tier: 'Standard' },
+    { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/', tier: 'Standard' },
     { icon: <Wallet size={20} />, label: 'Finance', path: '/finance', tier: 'Standard' },
     { icon: <Boxes size={20} />, label: 'Stock', path: '/stock', tier: 'Standard' },
     { icon: <PieChart size={20} />, label: 'Décisions', path: '/bi', tier: 'Essential' },

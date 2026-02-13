@@ -8,6 +8,9 @@ import Dashboard from './components/DashboardLayout';
 import DashboardHome from './pages/app/DashboardHome';
 import Finance from './pages/app/Finance';
 import Stock from './pages/app/Stock';
+import PilotCom from './pages/app/PilotCom';
+import Analytics from './pages/app/Analytics';
+import Automation from './pages/app/Automation';
 
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
           <Route index element={<DashboardHome/>}/>
           <Route path='finance' element={<Finance/>}/>
           <Route path="stock" element={<Stock />}/>
+          <Route path="marketing" element={<PilotCom />}/>
+          <Route path="ai" element={<Analytics />}/>
+          <Route path="auto" element={<Automation />}/>
         </Route>
         </Routes>
       </Router>
