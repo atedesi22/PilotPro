@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PublicLayout from './layouts/PublicLayout';
 import LandingPage from './pages/public/LandingPage';
 import PricingPage from './pages/public/PricingPage';
@@ -15,6 +15,8 @@ import AboutPage from './pages/public/AboutPage';
 import LoginPage from './pages/public/LoginPage';
 import AgenciesManager from './pages/app/AgenciesManager';
 import StaffManager from './pages/app/StaffManager';
+import RegisterPage from './pages/public/RegisterPage';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           <Route path='/pricing' element={<PricingPage/>}/>
           <Route path='/about' element={<AboutPage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
+          <Route path="/register" element={<><Navbar /><RegisterPage /></>} />
         </Route>
 
         {/* Section Application (Protégée/Multi-tenant) */}

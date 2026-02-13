@@ -80,7 +80,7 @@ const LoginPage = () => {
         </div>
 
         <p className="text-center text-slate-500 text-xs mt-10 font-medium italic">
-          Nouveau ici ? <Link to="/pricing" className="text-indigo-600 font-bold hover:underline">Créer une entreprise</Link>
+          Nouveau ici ? <Link to="/register" className="text-indigo-600 font-bold hover:underline">Créer une entreprise</Link>
         </p>
       </div>
 
