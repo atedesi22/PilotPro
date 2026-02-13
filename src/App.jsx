@@ -13,6 +13,8 @@ import Analytics from './pages/app/Analytics';
 import Automation from './pages/app/Automation';
 import AboutPage from './pages/public/AboutPage';
 import LoginPage from './pages/public/LoginPage';
+import AgenciesManager from './pages/app/AgenciesManager';
+import StaffManager from './pages/app/StaffManager';
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
 
         {/* Section Application (Protégée/Multi-tenant) */}
         <Route path='/app/:companySlug' element={<AppLayout/>}>
+        <Route path="agencies" element={<AgenciesManager />} />
+          <Route path="staff" element={<StaffManager />} />
           <Route index element={<DashboardHome/>}/>
           <Route path='finance' element={<Finance/>}/>
           <Route path="stock" element={<Stock />}/>
